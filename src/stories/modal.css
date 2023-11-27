@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.btn-close {
+    color: #1c1f21; 
+    font-size: 16px;
+    opacity: .8;
+    font-weight: 400;
+  }
+
+  .btn-close:hover {
+    opacity: 1;
+  }
+
+  .modal-title {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #393F41;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7rem;
+  }
+
+  .modal-content {
+    border-radius: .3rem;
+    border: 1px solid rgba(0,0,0,0.2);
+    background-color: #FFF;
+  }
+
+  .modal-header {
+    border-bottom: 1px solid #CCC;
+    padding: 24px;
+  }
+
+  .modal-footer {
+    border-top: 1px solid #CCC;
+    justify-content: center;
+    padding: .75rem;
+  }
+
+  .modal-body {
+    background: linear-gradient(0deg,rgba(32,32,32,.05),rgba(32,32,32,.05)),#fff;
+    padding: 32px;
+  }
+
+  .modal-dialog-content {
+    background: #FFF;
+    padding: 32px;
+  }
