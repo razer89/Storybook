@@ -37,6 +37,11 @@
   color: #687378; 
 }
 
+.storybook-button--primary:focus-visible {
+  outline: solid 2px #393F41;
+  border-color: #C8CDD0;
+}
+
 .storybook-button--secondary {
   color: #003594;
   background-color: transparent;
@@ -50,6 +55,11 @@
 
 .storybook-button--secondary:hover {
   background-color: #F4F5F6;
+}
+
+.storybook-button--secondary:focus-visible {
+  outline: solid 2px #393F41;
+  border-color: #C8CDD0;
 }
 
 .storybook-button--secondary:disabled {
@@ -67,6 +77,11 @@
   font-size: 16px;
   font-weight: 400;
   border: 1px solid #687378;
+}
+
+.btn.btn-secondary.dropdown-toggle:focus-visible {
+  outline: solid 2px #393F41;
+  border-color: #C8CDD0;
 }
 
 .btn.btn-link {
