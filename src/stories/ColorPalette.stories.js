@@ -2,7 +2,7 @@ import React from 'react';
 import ColorPalette from './ColorPalette';
 
 export default {
-  title: 'Components/Colours',
+  title: 'Colour Palettes/Colours',
   component: ColorPalette,
   parameters: {
     layout: 'centered',
