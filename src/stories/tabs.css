@@ -81,6 +81,7 @@ body {
     text-align: left;
     padding: .75rem 1.25rem;
     font-weight: 400;
+    white-space: nowrap;
   }
 
   .custom-vertical-tabs .nav-link:hover {
