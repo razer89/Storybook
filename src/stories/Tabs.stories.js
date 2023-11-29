@@ -104,3 +104,16 @@ BootstrapTabs.args = {
   ],
   activeTab: 'home',
 };
+
+export const BootstrapVerticalTabs = Template.bind({});
+BootstrapVerticalTabs.args = {
+  tabs: [
+    { id: 'v-home', label: 'Home', content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ', backgroundColor: '#FFF', contentClass: 'v-content' },
+    { id: 'v-profile', label: 'Profile', content: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', backgroundColor: '#FFF', contentClass: 'v-content' },
+    { id: 'v-messages', label: 'Messages', content: 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', backgroundColor: '#FFF', contentClass: 'v-content' },
+    { id: 'v-settings', label: 'Security Settings', content: '...', backgroundColor: '#FFF', contentClass: 'v-content' },
+  ],
+  activeTab: 'v-home',
+  isVertical: true,
+  verticalClass: 'custom-vertical-tabs',
+};

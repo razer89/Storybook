@@ -59,3 +59,50 @@ body {
     word-wrap: break-word;
     padding: 10px 15px 15px 15px;
   }
+
+ 
+  .custom-vertical-tabs .nav-pills {
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: .25rem;
+  }
+  
+  .custom-vertical-tabs .v-content {
+    color: #090A0B !important;
+    font-family: 'Poppins';
+    font-weight: normal;
+    font-size: 14px;
+    word-wrap: break-word;
+    padding: 10px 15px 15px 15px;
+  }
+  
+  .custom-vertical-tabs .nav-link {
+    color: #393F41;
+    background-color: #FFF;
+    text-align: left;
+    padding: .75rem 1.25rem;
+    font-weight: 400;
+  }
+
+  .custom-vertical-tabs .nav-link:hover {
+    color: #003594;
+    background-color: #F8F9FA;
+    border-color: #00153B;
+  }
+
+  .custom-vertical-tabs .nav-link.active {
+    background-color: #003594 !important;
+    border-color: #003594 !important;
+    color: #FFF !important;
+    text-align: left;
+  }
+
+  #v-profile-tab, #v-messages-tab, #v-settings-tab {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  #v-home-tab, #v-profile-tab, #v-messages-tab {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
