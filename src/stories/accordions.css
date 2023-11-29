@@ -1,0 +1,40 @@
+.accordion-item {
+    background-color: #FFF;
+    border-bottom: 1px solid #d4d8da;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    box-shadow: none;
+}
+
+.accordion-body:not(.collapsed) {
+    border-top: 1px solid #000;
+    font-weight: 400;
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: #393F41;
+}
+
+
+.accordion-button {
+    color: #003594;
+    font-size: 1.15rem;
+    font-weight: 400;
+    font-family: 'Poppins';
+    
+}
+
+.accordion-button:not(.collapsed) {
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23003594%27%3e%3cpath fill-rule=%27evenodd%27 d=%27M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e");
+    background-color: #FFF;
+    
+}
+
+.accordion-button.collapsed {
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%23003594%27%3e%3cpath fill-rule=%27evenodd%27 d=%27M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e");
+}
+
+.accordion-button:focus {
+    border-color: #FFF !important;
+    box-shadow: none;
+}
