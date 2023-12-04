@@ -1,0 +1,81 @@
+.bi-info-circle-fill, .bi-check-circle-fill {
+    font-size: 2rem;
+  }
+
+  .bi-check-circle-fill {
+    color: #4BBF73;
+  }
+
+  .bi-info-circle-fill {
+    color: #1f6dff;
+  }
+
+  .bi-exclamation-triangle-fill {
+    color: #E5A54B;
+  }
+  
+  .bi-exclamation-circle-fill {
+    color: #D9534F;
+  }
+  .alert-strong {
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Poppins';
+    color: #393f41;
+    margin-bottom: 5px;
+    line-height: 1.2;
+  }
+  
+  .alert-paragraph {
+    font-weight: regular;
+    font-size: 16px;
+    font-family: 'Poppins';
+    color: #393f41;
+    display: inline-block;
+    width: 100%;
+    line-height: 1.2;
+  }
+
+  .alert-success { 
+    background-color: #4BBF73 20%;
+    border: 2px solid #4BBF73;
+    gap: 24px;
+    align-items: center;
+    border-left: 20px solid #4BBF73;
+  }
+
+  .alert-primary {
+    background-color: #1f6dff 20%;
+    border: 2px solid #1f6dff;
+    gap: 24px;
+    align-items: center;
+    border-left: 20px solid #1f6dff;
+  }
+
+  .alert-warning {
+    background-color: #E5A54B 20%;
+    border: 2px solid #E5A54B;
+    gap: 24px;
+    align-items: center;
+    border-left: 20px solid #E5A54B;
+  }
+
+  .alert-danger {
+    background-color: #D9534F 20%;
+    border: 2px solid #D9534F;
+    gap: 24px;
+    align-items: center;
+    border-left: 20px solid #D9534F;
+  }
+
+  .alert-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+  }
+
+.btn-close {
+    color: #393f41 !important;
+    opacity: .8;
+    line-height: 1;
+}
