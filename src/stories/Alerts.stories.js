@@ -46,7 +46,6 @@ export default {
   export const PrimaryAlert = () => (
     <Alert
       type="primary"
-      icon="info-circle-fill"
       message="Holy guacamole!"
       additionalInfo="Here is some additional information."
     />
@@ -55,7 +54,6 @@ export default {
   export const SuccessAlert = () => (
     <Alert
       type="success"
-      icon="check-circle-fill"
       message="Holy guacamole!"
       additionalInfo="Here is some additional information."
     />
@@ -64,7 +62,6 @@ export default {
   export const WarningAlert = () => (
     <Alert
       type="warning"
-      icon="exclamation-triangle-fill"
       message="Holy guacamole!"
       additionalInfo="Here is some additional information."
     />
@@ -73,7 +70,6 @@ export default {
   export const DangerAlert = () => (
     <Alert
       type="danger"
-      icon="exclamation-circle-fill"
       message="Holy guacamole!"
       additionalInfo="Here is some additional information."
     />

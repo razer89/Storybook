@@ -1,22 +1,4 @@
-.bi-info-circle-fill, .bi-check-circle-fill {
-    font-size: 2rem;
-  }
 
-  .bi-check-circle-fill {
-    color: #4BBF73;
-  }
-
-  .bi-info-circle-fill {
-    color: #1f6dff;
-  }
-
-  .bi-exclamation-triangle-fill {
-    color: #E5A54B;
-  }
-  
-  .bi-exclamation-circle-fill {
-    color: #D9534F;
-  }
   .alert-strong {
     font-weight: 700;
     font-size: 16px;
@@ -37,7 +19,7 @@
   }
 
   .alert-success { 
-    background-color: #4BBF73 20%;
+    background-color: #FFF;
     border: 2px solid #4BBF73;
     gap: 24px;
     align-items: center;
@@ -45,7 +27,7 @@
   }
 
   .alert-primary {
-    background-color: #1f6dff 20%;
+    background-color: #FFF;
     border: 2px solid #1f6dff;
     gap: 24px;
     align-items: center;
@@ -53,7 +35,7 @@
   }
 
   .alert-warning {
-    background-color: #E5A54B 20%;
+    background-color: #FFF;
     border: 2px solid #E5A54B;
     gap: 24px;
     align-items: center;
@@ -61,7 +43,7 @@
   }
 
   .alert-danger {
-    background-color: #D9534F 20%;
+    background-color: #FFF;
     border: 2px solid #D9534F;
     gap: 24px;
     align-items: center;
@@ -74,8 +56,4 @@
     margin-top: 5px;
   }
 
-.btn-close {
-    color: #393f41 !important;
-    opacity: .8;
-    line-height: 1;
-}
+ 
