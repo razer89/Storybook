@@ -8,10 +8,6 @@
   background-color: #003594;
 }
 
-.storybook-header svg {
-  display: inline-block;
-  vertical-align: top;
-}
 
 .storybook-header h1 {
   font-weight: 700;
@@ -49,4 +45,20 @@
   outline: 0;
   cursor: pointer;
   color:#FFF;
+}
+
+.notifications-icon, .person-icon, .arrow-dropdown-icon {
+  fill: #FFF;
+  border: 1px solid transparent;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.icons-itm {
+  margin-right: -15px;
+}
+
+.navbar-items {
+  display: flex;
 }
