@@ -1,0 +1,20 @@
+
+.form-select {
+  min-width: 195px;
+  max-width: 250px;
+  color: #393F41 !important;
+  font-family: 'Poppins-Regular',-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px !important;
+  font-weight: normal !important;
+  margin: 0 0 10px 0;
+  padding: 6px !important;
+  border-radius: 4px 4px 4px 4px !important;
+  appearance: auto !important;
+  --bs-form-select-bg-img: none !important;
+  box-shadow: none !important;
+  height: 39px;
+}
+
+.form-select:focus {
+   border-color: #003594 !important;
+}
