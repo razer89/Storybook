@@ -10,7 +10,8 @@ const config = {
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
     "storybook-addon-pseudo-states",
-    "@storybook/addon-mdx-gfm"
+    "@storybook/addon-mdx-gfm",
+    "@storybook/addon-designs"
   ],
   framework: {
     name: "@storybook/react-webpack5",
