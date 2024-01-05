@@ -52,7 +52,6 @@
     "@storybook/addon-links": "^7.5.3",
     "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/blocks": "^7.5.3",
-    "@storybook/manager-api": "^7.6.7",
     "@storybook/preset-create-react-app": "^4.1.0",
     "@storybook/react": "^7.5.3",
     "@storybook/react-webpack5": "^7.5.3",
@@ -70,7 +69,6 @@
     "@storybook/react-webpack5": "^7.6.7",
 >>>>>>> d34384ceb3023eece27597bcb77b241022b62599
     "@storybook/testing-library": "^0.2.2",
-    "@storybook/theming": "^7.6.7",
     "babel-plugin-named-exports-order": "^0.0.2",
     "chromatic": "^9.1.0",
     "eslint-plugin-storybook": "^0.6.15",
