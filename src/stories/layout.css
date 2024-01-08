@@ -61,13 +61,13 @@ body {
   }
   
   #left-sidebar a:hover {
-    background-color: #c8cdd0;; /* Change background color on hover */
+    background-color: #c8cdd0; 
     border-right-color: #003591;
     color: #fff;
   }
   
   #left-sidebar a.active {
-    background-color: #c8cdd0;; /* Set the active background color */
+    background-color: #c8cdd0;
     color: #fff;
     font-weight: bold;
     border-right-color: #003591;
@@ -105,7 +105,7 @@ body {
 
   #right-content table {
     width: 100%;
-    max-width: 780px; /* Set the maximum width to 780px */
+    max-width: 780px;
     border-collapse: collapse;
     margin-top: 20px;
   }

@@ -8,5 +8,6 @@ export default {
 
 const Template = (args) => <Layout {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const LayoutGuide = Template.bind({});
+LayoutGuide.args = {};
+LayoutGuide.storyName = 'Guidelines';
