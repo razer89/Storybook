@@ -1,0 +1,121 @@
+@import '../master.less';
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.storybook-button {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  transition: background-color 0.3s ease;
+}
+
+.storybook-button:hover {
+  background-color: #00153B;
+  /* Change to the desired hover color */
+}
+
+.storybook-button:disabled {
+  background-color: #d3d3d3;
+  /* Change to the desired disabled color */
+  cursor: not-allowed;
+}
+
+.storybook-button--primary {
+  color: @white;
+  background-color: @main-color;
+  border-radius: 4px;
+  padding: @btn-padding;
+  font-family: 'Poppins';
+  font-size: @font-size-small;
+  font-weight: 400;
+  border: 1px solid @btn-border-color;
+}
+
+.storybook-button--primary:disabled {
+  background-color: @light-grey-2;
+  border: 1px solid @light-grey-4;
+  color: @dark-grey-2;
+}
+
+.storybook-button--primary:focus-visible {
+  outline: solid 2px @dark-grey-4;
+  border-color: @light-grey-4;
+}
+
+.storybook-button--secondary {
+  color: #003594;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: @btn-padding;
+  font-family: 'Poppins';
+  font-size: @font-size-small;
+  font-weight: 400;
+  border: 1px solid @btn-border-color;
+}
+
+.storybook-button--secondary:hover {
+  background-color: #F4F5F6;
+}
+
+.storybook-button--secondary:focus-visible {
+  outline: solid 2px #393F41;
+  border-color: #C8CDD0;
+}
+
+.storybook-button--secondary:disabled {
+  background-color: #F4F5F6;
+  border: 1px solid #C8CDD0;
+  color: #687378;
+}
+
+.btn.btn-secondary.dropdown-toggle {
+  color: #1c1f21;
+  background-color: #FFF;
+  border-radius: 4px;
+  padding: @btn-padding;
+  font-family: 'Poppins';
+  font-size: @font-size-small;
+  font-weight: 400;
+  border: 1px solid #687378;
+}
+
+.btn.btn-secondary.dropdown-toggle:focus-visible {
+  outline: solid 2px #393F41;
+  border-color: #C8CDD0;
+}
+
+.btn.btn-link {
+  color: #003594;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: 'Poppins';
+  font-size: @font-size-small;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.btn.btn-link:hover {
+  text-decoration: underline;
+  outline: 0;
+  cursor: pointer;
+  color: #003594;
+}
+
+.storybook-button--small {
+  font-size: 13px;
+  padding: 4px 10px;
+}
+
+.storybook-button--medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+
+.storybook-button--large {
+  font-size: @font-size-small;
+  padding: 8px 22px;
+}

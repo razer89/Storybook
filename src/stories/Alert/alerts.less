@@ -1,0 +1,58 @@
+@import '../master.less';
+
+.alert-strong {
+  font-weight: 700;
+  font-size: @font-size-small;
+  font-family: 'Poppins-Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: @dark-grey-4;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.alert-paragraph {
+  font-weight: regular;
+  font-size: @font-size-small;
+  font-family: 'Poppins-Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: @dark-grey-4;
+  display: inline-block;
+  width: 100%;
+  line-height: 1.2;
+}
+
+.alert-success {
+  background-color: @white;
+  border: 2px solid @success-green;
+  gap: 24px;
+  align-items: center;
+  border-left: 20px solid @success-green;
+}
+
+.alert-primary {
+  background-color: @white;
+  border: 2px solid @blue;
+  gap: 24px;
+  align-items: center;
+  border-left: 20px solid @blue;
+}
+
+.alert-warning {
+  background-color: @white;
+  border: 2px solid @warning-orange;
+  gap: 24px;
+  align-items: center;
+  border-left: 20px solid @warning-orange;
+}
+
+.alert-danger {
+  background-color: @white;
+  border: 2px solid @error-red;
+  gap: 24px;
+  align-items: center;
+  border-left: 20px solid @error-red;
+}
+
+.alert-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}

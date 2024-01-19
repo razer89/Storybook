@@ -1,0 +1,144 @@
+@import '../master.less';
+
+body {
+  display: flex;
+  font-family: 'Poppins-Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.layout {
+  display: flex;
+}
+
+#left-sidebar {
+  width: 350px;
+  background-color: transparent;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  margin-right: 0;
+  left: auto;
+  right: 0;
+  color: #003594;
+}
+
+#left-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#left-sidebar li {
+  margin-bottom: 10px;
+}
+
+#right-content {
+  margin-right: 250px;
+  padding: 20px;
+}
+
+#left-sidebar h2 {
+  color: #003594;
+  ;
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: 'Poppins-Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-family: 'Poppins-Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+#left-sidebar a {
+  text-decoration: none;
+  color: #003594;
+  display: block;
+  padding: 10px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Poppins-Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  border-right: 3px solid transparent;
+}
+
+#left-sidebar a:hover {
+  background-color: #c8cdd0;
+  border-right-color: #003591;
+  color: #fff;
+}
+
+#left-sidebar a.active {
+  background-color: #c8cdd0;
+  color: #fff;
+  font-weight: bold;
+  border-right-color: #003591;
+}
+
+#home p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #393f41;
+  font-family: 'Poppins-Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+#principles p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #393f41;
+  font-family: 'Poppins-Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+#principles ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+#principles li {
+  margin-right: 20px;
+}
+
+#principles li::before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  color: #007bff;
+}
+
+#right-content table {
+  width: 100%;
+  max-width: 780px;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#right-content th,
+#right-content td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+#right-content th {
+  background-color: #f2f2f2;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+#right-content td {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+#layoutgrid ul {
+  list-style-type: disc;
+}
+
+#layoutgrid li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #393f41;
+  font-family: 'Poppins-Medium', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}

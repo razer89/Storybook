@@ -1,0 +1,2295 @@
+//
+// master.less - Analysis 7 master customer branding file
+// Customer specific changes should be made to this file.
+//
+
+/* The master.less applies all the branding */
+
+/* Content
+
+1 - Base Variables
+	1.1 - Colours			(General reusable core colours)
+	1.2 - Body				(Main body content)
+	1.3 - Links				(All hyperlinks)
+	1.4 - Headings			(Main headings)
+	1.5 - Borders			(Main borders)
+	1.6 - Labels			(Label colours e.g up, down to indicate change in value)
+	1.7 - Animations		(Animation links / boxes)
+	1.8 - Tooltips 			(Tooltip boxes)
+	1.9 - Warning Colours	(Warning colours for row etc)
+2 - Actions					(Covers action btns, view toggle btns, dropdown menus etc)
+	2.1 - Caret				(This refers to the arrow used in the dropdown buttons etc)
+	2.2 - Action Group		(Dropdown btns for config & actions)
+	2.3 - Dropdown Menu		(Dropdown to action btns)
+	2.4 - View Group		(Toggle view btns)
+	2.5 - Summaries Charts	(Summary view chart options)
+3 - Inline Tour				(Covers inline tour elements such as the popovers, icons etc)
+4 - Messages				(Covers the highlight, warning, success & information panels)
+5 - Forms					(Covers form elements like btns, inputs etc)
+	5.1 - Pagination		(All pagination)
+	5.2 - Inputs			(All text inputs / selects)
+	5.3 - Buttons			(All general btns)
+6 - Table					(All table elements)
+7 - sk-jumpbar				(Main side navigation)
+8 - sk-header				(Main header)
+ 	8.1 - General 			(Main colour / border bottom)
+	8.2 - Options			(Dropdown items in the header)
+	8.3 - Logo				(Company logo)
+9 - sk-footer				(Main footer)
+10 - sk-overview-list	 	(Reports Overview page options)
+11 - sk-menus				(Report menus)
+12 - sk-wrapper 			(Wrapper and box header / options)
+13 - sk-panel 				(sk-panels borders / headers)
+14 - sk-box 				(sk-boxes borders / headers / items)
+15 - sk-struct-control 		(Structure control options)
+16 - invoice-selector		(Invoice Selector)
+17 - breadcrumb-selection
+18 - Tabs					(Tabs)
+19 - Collapsed / Popups		(Collapsed panels and remaining pop up options)
+20 - Welcome Message 		(Welcome message options)
+21 - sk-invoice				(Invoice summary, payment details & invoice portlet options)
+22 - Accounts 				(Liferays accounts section)
+23 - Reports 				(Bespoke report sections)
+24 - Back Office			(Bespoke backoffice sections)
+25 - Manage Rules			(Bespoking for mange rules under tagging configuration section)
+26 - Observations			(Bespoke observations sections)
+27 - Unbilled (Real Time)	(Bespoking for real time pages)
+28 - Forgotten Password		(Bespoking for forgotten password link)
+28.1 - Forgotten Password - GUID link change password screen
+29 - Message Centre
+30 - Notification / Insights SideBar
+31 - Bootstrap panels for navigation
+32 - Uploads
+33 - Downloads
+34 - Templates (including marketing)
+35 - Carousel
+36 - Modal Dialogs
+37 - Vertical pill - bootstrap
+38 - Manage Services
+*/
+
+/*-- 1 - Base Variables --------------------------------------------------------------------------------------*/
+
+	/* --- 1.1 - Colours ----------------------------------------- */
+
+	/* General colours */
+	@disabled: @light-grey-3; /* Disabled elements */
+	@hover: @light-grey-2; /* Hover elements */
+	@focus: @dark-grey-4; /* Focused elements */
+	@block-link-background: #E2E2E2; /* Used on the collapsed back to link and load more link backgrounds */
+
+	/* Box Shadows */
+	@box-shadow: 0 1px 4px -2px rgba(12, 12, 13, 0.1); /* Use this for simple overlays like Menus, Cards  */
+	@box-shadow-2: 0 0 32px rgba(0,0,0,0.8); /* Use this for Dialog boxes, Toastify Notifications etc.  */
+	@box-shadow-3: 0 0 48px rgba(0,0,0,0.8);
+
+	@focus-outline-width: 2px;
+	@focus-outline: solid @focus-outline-width @focus;
+	@focus-border-color: @focus;
+	@focus-input-group-icon-border-radius: @input-border-top-left-radius @input-border-top-left-radius @input-border-top-left-radius @input-border-bottom-left-radius;
+
+	/* Portlets */
+	@portlet-background: @white;
+	@heading-background: @portlet-background; /* Used for portlet headings backgrounds as standard */
+	@portlet-gap: 16px;
+
+	/* Tables */
+
+	/* --- Header Row --- */
+	@header-row: @white;
+	@header-row-border: 5px solid #E9ECEF;
+	@header-row-font: @main-font;
+	@header-row-font-weight: bold;
+
+	/* --- Totals Row --- */
+	@totals-row: @white;
+	@totals-row-border: 1px solid #E9ECEF;
+	@totals-row-font: @main-font;
+	@totals-row-font-weight: @body-font-weight;
+	@totals-row-font-family: @body-font-family;
+
+	/* --- Body --- */
+	@table-row-border: 1px solid #E9ECEF;
+	@table-body-border: 1px solid #E9ECEF; /* Table body border*/
+	@table-border-radius: 0px;
+	@zebra-row: @white;
+	@highlight-row: linear-gradient(0deg, rgba(32, 32, 32, 0.05), rgba(32, 32, 32, 0.05)), @white;
+	@sort-column: @highlight-row;
+
+	/* Fonts */
+
+	/* --- Colours --- */
+	@link: @main-color; /* link elements */
+	@link-hover: #04498E; /* link elements */
+	@main-font: @dark-grey-4;
+	@main-font-hover: @dark-grey-4;
+	@heading: @dark-grey-4; /* Used for portlet headings as standard */
+	@heading-boxed-background: @dark-grey-4;
+	@heading-boxed-font-color: @white;
+
+	/* --- Sizes --- */
+	@font-size-large: 1.7rem;
+	@font-size-medium: 1.25rem;
+	@font-size-small: 16px;
+	@line-height: 1.2;
+
+	@font-size-h1: @font-size-large; // Main section title
+	@font-size-h2: 1.45rem; // Modal heading or main content title
+	@font-size-h3: @font-size-medium;
+	@font-size-h4: 1.1rem;
+
+	/* Navigation */
+	@navigation-background: @light-grey-2; /* Background colour */
+	@navigation-background-hover-active: @light-grey-4; /* Background colour on hover & active */
+	@navigation-font: @black; /* Font and Icon colour */
+	@navigation-font-hover-active: @black; /* Font colour on hover & active */
+
+	/* Header / Footers */
+	@header-footer-background: @white;
+	@header-footer-border: none;
+
+	/* Icon */
+
+	/* --- Sizes --- */
+	@icon-size-large: @font-size-large;
+	@icon-size-medium: @font-size-medium;
+	@icon-size-small: @font-size-small;
+
+	/* --- Closed icon colours --- */
+	@dark-close-icons: @dark-grey-5;
+	@light-close-icons: @white;
+
+	/* --- Box icon colours (change icons via 14 - sk-box section) --- */
+	@sk-box-icon-color: @main-color;
+	@sk-box-icon-color-1: @main-color;
+	@sk-box-icon-color-2: #693A77;
+	@sk-box-icon-color-3: #00B299;
+	@sk-box-icon-color-4: #D52B1E;
+	@sk-box-icon-color-5: #F69240;
+	@sk-box-icon-color-6: #F3D311;
+
+	@sk-box-font-family: @body-font-family;
+	@sk-box-font-weight: @body-font-weight;
+	@sk-box-small-font-size: @font-size-small;
+	@sk-box-large-font-size: @font-size-small;
+	@sk-box-small-line-height: @body-line-height;
+	@sk-box-large-line-height: @body-line-height;
+
+	/* Inline Tour colours */
+	@tour: @success-green;
+
+	/** Bootstrap Checkbox Radio Colours */
+	@radio-button-background: @white;
+	@radio-button-border-color: @main-font;
+	@radio-button-font-color: @main-font;
+	@radio-button-font-size: @table-font-size;
+	@radio-button-active-background: @primary;
+	@radio-button-active-border-color: @primary;
+	@radio-button-active-font-color: @white;
+
+	/* Specific colours */
+	@main-color: @primary;
+	@light-red: #FCEAEA;
+	@red: #E42C2C;
+	@light-yellow: #FFF9E6;
+	@yellow: #E4CF0F;
+	@light-green: #D6FFE9;
+	@green: #00C65E;
+	@light-blue: #EBF2FF;
+	@blue: #1F6DFF;
+
+	/* Brand Colours */
+	@primary: #003594;
+	@secondary: #0A2D66;
+
+	/* Accent Colours */
+
+	/* Primary */
+	@accent-BP1: #ADCAFF;
+	@accent-BP2: #85AFFF;
+	@accent-BP3: #337AFF;
+	@accent-BP4: #004FE0;
+	@accent-BP5: #00153B;
+	@accent-BP6: #000E29;
+
+	/* Secondary */
+	@accent-BS1: #DDF1F8;
+	@accent-BS2: #B0D9E8;
+	@accent-BS3: #235C80;
+	@accent-BS4: #184C60;
+	@accent-BS5: #12333F;
+	@accent-BS6: #091A20;
+
+	/* Neutrals */
+
+	/* Light Grey Colours */
+	@white: #FFF;
+	@light-grey-1: #F4F5F6;
+	@light-grey-2: #E9EBEC;
+	@light-grey-3: #D4D8DA;
+	@light-grey-4: #C8CDD0;
+	@light-grey-5: #BEC3C6;
+	@light-grey-6: #A8AFB3;
+
+	/* Dark Grey Colours */
+	@dark-grey-1: #879197;
+	@dark-grey-2: #687378;
+	@dark-grey-3: #555E62;
+	@dark-grey-4: #393F41;
+	@dark-grey-5: #1C1F21;
+	@dark-grey-6: #121416;
+	@black: #090A0B;
+
+	/* State Colours */
+
+	/* Inform */
+	@inform-blue-light-1: #EBF2FF;
+	@inform-blue-light-2: #ADCAFF;
+	@inform-blue: #1F6DFF;
+	@inform-blue-dark-1: #004FE0;
+	@inform-blue-dark-2: #00153B;
+
+	/* Success */
+	@success-green-light-1: #D6FFE9;
+	@success-green-light-2: #85FFBE;
+	@success-green: #00C65E;
+	@success-green-dark-1: #0D8249;
+	@success-green-dark-2: #002913;
+
+	/* Warnings */
+	@warning-orange-light-1: #FFEBD6;
+	@warning-orange-light-2: #FFCE99;
+	@warning-orange: #FF9628;
+	@warning-orange-dark-1: #522A00;
+	@warning-orange-dark-2: #291500;
+	@warning-yellow: #E4CF0F;
+
+	/* State Colours */
+	@error-red-light-1: #FCEAEA;
+	@error-red-light-2: #F19393;
+	@error-red: #E42C2C;
+	@error-red-dark-1: #A21515;
+	@error-red-dark: #360707;
+
+	/* Others */
+
+	/* Background */
+	@paper-background: @white;
+	@snackbar-background: #393F41;
+	@backdrop: rgba(0,0,0,0.6);
+
+	/* Components Colours */
+	@border-one: #C8CDD0;
+	@filled-input-background: #F4F5F6;
+
+	/* Chart colours */
+	@chart-choice-border: 1px solid @light-grey-4;
+	@chart-choice-font-color: @main-font;
+	@chart-choice-font-selected-color: @primary;
+
+	/* --- 1.2 - Body --------------------------------------------------- */
+
+
+	@body-background: @light-grey-1;
+	@body-font-color: @main-font;
+	@body-font-family: 'Poppins-Regular',-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif; /* Uses body font family - only remove to bespoke */
+	@body-font-size: @font-size-small;
+	@body-font-weight: normal;
+	@body-line-height: @line-height;
+
+	@text-formatting-font-size: @font-size-small;
+	@text-formatting-line-height: @body-line-height;
+
+	/* --- 1.3 - Links -------------------------------------------------- */
+	@link-font-color: @link;
+	@link-hover-font-color: @link-hover;
+    @link-font-family: @body-font-family; /* Uses body font family - only remove to bespoke */
+    @link-text-decoration: none;
+    @link-hover-text-decoration: underline;
+
+	/* --- 1.4 - Headings ----------------------------------------------- */
+	/* --- General --- */
+	@heading-font-color: @heading;
+	@heading-font-family: 'Poppins-Medium',-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif; /* Uses body font family - only remove to bespoke */
+	@heading-font-weight: 500;
+	@heading-line-height: @line-height;
+
+	@heading-h1-font-size: @font-size-h1;
+	@heading-h1-line-height: @heading-line-height;
+	@heading-h1-font-family: @heading-font-family;
+	@heading-h1-font-color: @heading-font-color;
+	@heading-h1-font-weight: @heading-font-weight;
+
+	@heading-h2-font-size: @font-size-h2;
+	@heading-h2-font-family: @heading-font-family;
+	@heading-h2-font-color: @heading-font-color;
+	@heading-h2-line-height: @heading-line-height;
+	@heading-h2-font-weight: @heading-font-weight;
+
+	@heading-h3-font-size: @font-size-h3;
+	@heading-h3-font-family: @heading-font-family;
+	@heading-h3-font-color: @heading-font-color;
+	@heading-h3-line-height: @heading-line-height;
+	@heading-h3-font-weight: @heading-font-weight;
+
+	@heading-small-font-size: @font-size-h4;
+	@heading-small-font-family: @body-font-family; // Don't want a font family where the heading text looks smaller than the body text of the same size
+	@heading-small-font-color: @heading-font-color;
+	@heading-small-line-height: @heading-line-height;
+	@heading-small-font-weight: @heading-font-weight;
+
+	@myview-font-size: @font-size-small;
+	@myview-heading-font-size: @font-size-medium;
+	@myview-heading-font-family: @heading-font-family;
+	@myview-heading-font-color: @heading-font-color;
+	@myview-heading-line-height: @line-height;
+	@myview-heading-font-weight: @heading-font-weight;
+	@myview-icon-size: @icon-size-small;
+
+	@heading-anchor-font-size: @font-size-small;
+	@heading-anchor-font-weight: normal;
+
+	/* --- 1.5 - Borders ------------------------------------------------ */
+	@border: 1px solid @main-color; /* General borders - Used to apply borders throughout when no bespoking is needed */
+	@border-radius: 4px; /* Used to apply radius throughout when no bespoking is needed - Only enter single value as used for single corners */
+	@portlet-border-radius: @border-radius; /* Used to apply radius throughout when no bespoking is needed - Only enter single value as used for single corners */
+	@portlet-section-border-radius: @border-radius; /* Used to apply radius throughout when no bespoking is needed - Only enter single value as used for single corners */
+	@input-items-border-radius: @border-radius; /* Used to apply radius throughout when no bespoking is needed - Only enter single value as used for single corners */
+
+	/* --- 1.6 - Labels ------------------------------------------------- */
+	@arrow-up: @red; /* All up arrows */
+	@arrow-down: @green; /* All down arrows */
+	@arrow-right: @warning-orange; /* All right arrows -indicates no change */
+
+	/* --- 1.7 - Animations --------------------------------------------- */
+	@please-wait-background: @main-font;
+
+	/* --- Animations (links to animations) --- */
+
+	/* --- Waiting Content (Style for waiting content boxes) --- */
+	@waiting-content-border:  @border;
+	/* Border Radius - only enter single value as used for single corners */
+	@waiting-content-border-top-left-radius: @border-radius;
+	@waiting-content-border-top-right-radius: @border-radius;
+	@waiting-content-border-bottom-right-radius: @border-radius;
+	@waiting-content-border-bottom-left-radius: @border-radius;
+
+	/* --- 1.8 Tooltips -------------------------------------------------- */
+
+	@tooltip-background: @white;
+	@tooltip-border: 1px solid @dark-grey-4;
+	/* Border Radius - only enter single value as used for single corners */
+	@tooltip-border-top-left-radius: @border-radius;
+	@tooltip-border-top-right-radius: @border-radius;
+	@tooltip-border-bottom-right-radius: @border-radius;
+	@tooltip-border-bottom-left-radius: @border-radius;
+	@tooltip-font-color: @dark-grey-4;
+
+	/* --- 1.9 - Warning Colours --- */
+	@invalid-color: @light-red;
+
+/* -- 2 - Actions ---------------------------------------------------------------------------------------- */
+
+	/* --- 2.1 - Caret ---------------------------------------------------*/
+	@caret-border-color: @dark-grey-5;
+	@caret-border-color-disabled: @disabled;
+	@action-group-box-display-caret: none; /* Display dropdown arrow on icon selectors (inline-block) or not (none) */
+	@action-group-border-padding: 0; /* Add padding right to separate icon and border */
+
+	/* --- 2.2 - Action Group (Dropdown btns for config & actions)--------*/
+	@action-group-background: transparent;
+	@action-group-background-hover: @hover;
+	@action-group-background-diasabled: @disabled;
+	@action-group-border: none; /* Border for the whole dropdown */
+	/* Border Radius - only enter single value as used for single corners */
+	@action-group-border-top-left-radius: @border-radius;
+	@action-group-border-top-right-radius: @border-radius;
+	@action-group-border-bottom-right-radius: @border-radius;
+	@action-group-border-bottom-left-radius: @border-radius;
+	@action-group-icon-size: @icon-size-medium;
+	@action-group-color: @dark-grey-5;
+	@action-group-font-hover-color: @link;
+	@action-group-color-disabled: @light-grey-6;
+	@action-group-box-shadow: none;
+	@action-group-box-shadow-hover: none;
+
+	/* --- 2.3 - Dropdown Menu -------------------------------------------*/
+	@dropdown-menu-background: @white;
+	@dropdown-menu-background-hover: @hover;
+	@dropdown-menu-background-diasabled: @disabled;
+	@dropdown-menu-border-color: @dark-grey-2;
+	@dropdown-menu-border: 1px solid @dropdown-menu-border-color; /* Border for the whole dropdown */
+	@dropdown-menu-btn-border: none; /* Border for the left of the dropdown arrow */
+	@dropdown-menu-icon-border: 1px solid @light-grey-4; /* Border for the right of the dropdown icon */
+	/* Border Radius - only enter single value as used for single corners */
+	@dropdown-menu-border-top-left-radius: 5px;
+	@dropdown-menu-border-top-right-radius: 5px;
+	@dropdown-menu-border-bottom-right-radius: 5px;
+	@dropdown-menu-border-bottom-left-radius: 5px;
+	@dropdown-menu-color: @dark-grey-5;
+	@dropdown-menu-font-hover-color: @dark-grey-5;
+	@dropdown-menu-icon-size: @font-size-large;
+	@dropdown-menu-font-size: @font-size-small;
+	@dropdown-menu-disabled: @disabled;
+	@dropdown-menu-disabled-hover: transparent;
+	@dropdown-menu-box-shadow: none;
+	@dropdown-menu-height: 28px;
+
+	/* --- 2.4 Topnav Dropdown Menu ------------------------------------------------------ */
+	@topnav-dropdown-menu-border: @dropdown-menu-border;
+
+	/* --- 2.5 - View Group (Toggle view btns) ---------------------------*/
+	@view-group-background: @white;
+	@view-group-border: 1px solid @light-grey-4;
+	@view-group-icon-color: @link;
+	/* Only enter single value as used for single corners */
+	@view-group-border-top-left-radius: @btn-border-top-left-radius;
+	@view-group-border-top-right-radius: @btn-border-top-right-radius;
+	@view-group-border-bottom-right-radius: @btn-border-bottom-right-radius;
+	@view-group-border-bottom-left-radius: @btn-border-bottom-left-radius;
+	@view-group-right-color: @main-color;
+	@view-group-right-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	@view-group-font-size: @font-size-medium;
+
+	@view-group-position-right: 13px;
+	@view-group-position-top: 18px;
+
+	/* --- 2.5 - Summaries Charts (Summary view chart options)------------ */
+	@summaries-position-right: 130px;
+	@summaries-position-top: 19px;
+	@summaries-font-size: @font-size-small;
+	@summaries-icon-size: @icon-size-medium;
+
+	/* Display icons */
+	@summaries-icon-display: none; /* Hide (none) or show (table-cell) the icon */
+	@summaries-content-display: block; /* If no icon (block) or with icon (table-cell) */
+
+	/* --- 2.5 toggle checkboxes ---------------------------- */
+	@toggle_checkbox_font_color: @main-font;
+	@toggle_checkbox_font_size: @font-size-small;
+	@toggle_checkbox_switch_width: 54px;
+	@toggle_checkbox_switch_height: 28px;
+	@toggle_checkbox_switch_top:-3px;
+	@toggle_checkbox_slider_background_color: @radio-button-active-background;
+	@toggle_checkbox_slider_width: 20px;
+	@toggle_checkbox_slider_height: 20px;
+
+/* -- 3 - Inline Tour ------------------------------------------------------------------------------------ */
+
+	/* General */
+	@popover-background-color: @portlet-background;
+	@popover-border: 2px solid @tour;
+	@popover-arrow-border-color: @tour; /* Needs to be the same as the border colour */
+	@popover-arrow-border-width: 2px; /* Width only - should match main border width */
+	/* Border Radius - only enter single value as used for single corners */
+	@popover-border-top-left-radius: @border-radius;
+	@popover-border-top-right-radius: @border-radius;
+	@popover-border-bottom-right-radius: @border-radius;
+	@popover-border-bottom-left-radius: @border-radius;
+	@popover-box-shadow: @box-shadow;
+	@popover-font-color: @main-font;
+	@popover-font-size: @font-size-small;
+
+	/* Title */
+	@popover-title-background-color: @portlet-background;
+	@popover-title-font-color: @main-font;
+
+	/* Icon */
+	@popover-icon-color: @dark-grey-2; /* Help menu icon */
+	@hint-icon-colour: @inform-blue-dark-2; /* Pulsing hint icon */
+	@hint-topbar-icon-color: @header-font-color;
+	@hint-sidebar-icon-color: @hint-icon-colour;
+	@hint-body-icon-color: @hint-icon-colour;
+	@hint-highlight-colour: @tour; /* Colour used to highlight the help icon when hints are available */
+
+/* -- 4 - Messages --------------------------------------------------------------------------------------- */
+
+	/* --- Close Link --- */
+	@close-icon-color: @dark-close-icons;
+
+	/* --- Highlight Panels --- */
+	/* Border Radius - only enter single value as used for single corners */
+	@message-border-top-left-radius: @border-radius;
+	@message-border-top-right-radius: @border-radius;
+	@message-border-bottom-right-radius: @border-radius;
+	@message-border-bottom-left-radius: @border-radius;
+	@message-background: @light-yellow;
+	@message-border: 1px solid @light-yellow;
+	@message-font-color: @main-font;
+	/* Optional header on a message panel */
+	@message-header-background: @popup-header-background;
+	@message-header-font-color: @popup-header-font-color;
+	@message-header-font-size: @popup-header-font-size;
+	@message-header-font-weight: @popup-header-font-weight;
+	@message-close-font-color: @popup-close-font-color;
+	@message-close-font-color-hover: @warning-orange-dark-1;
+
+	/* --- Warning Panels --- */
+	@warning-background: @light-red;
+	@warning-border: 1px solid @light-red;
+	/* Border Radius - only enter single value as used for single corners */
+	@warning-border-top-left-radius: @border-radius;
+	@warning-border-top-right-radius: @border-radius;
+	@warning-border-bottom-right-radius: @border-radius;
+	@warning-border-bottom-left-radius: @border-radius;
+	@warning-font-color: @error-red-dark-1;
+
+	/* --- Success Panels --- */
+	@success-background: @light-green;
+	@success-border: 1px solid @light-green;
+	/* Border Radius - only enter single value as used for single corners */
+	@success-border-top-left-radius: @border-radius;
+	@success-border-top-right-radius: @border-radius;
+	@success-border-bottom-right-radius: @border-radius;
+	@success-border-bottom-left-radius: @border-radius;
+	@success-font-color: @success-green-dark-2;
+
+	/* --- Information Panels --- */
+	@general-background: @light-blue;
+	@general-border: 1px solid @light-blue;
+	/* Border Radius - only enter single value as used for single corners */
+	@general-border-top-left-radius: @border-radius;
+	@general-border-top-right-radius: @border-radius;
+	@general-border-bottom-right-radius: @border-radius;
+	@general-border-bottom-left-radius: @border-radius;
+	@general-font-color: @inform-blue-dark-1;
+
+/* -- 5 - Forms ----------------------------------------------------------------------------------------- */
+
+	/* --- 5.1 - Pagination --------------------------------------------- */
+	@pagination-background: @white;
+	@pagination-border: 1px solid @primary;
+	/* Border Radius - only enter single value as used for single corners */
+	@pagination-border-top-left-radius: @input-items-border-radius;
+	@pagination-border-top-right-radius: @input-items-border-radius;
+	@pagination-border-bottom-right-radius: @input-items-border-radius;
+	@pagination-border-bottom-left-radius: @input-items-border-radius;
+	@pagination-font-color: @primary;
+	@pagination-font-weight: bold;
+	@pagination-background-active: @primary;
+	@pagination-border-active: 1px solid @primary;
+	@pagination-font-color-active: @white;
+	@pagination-background-disabled: #E9EBEC;
+	@pagination-border-disabled: 1px solid #C8CDD0;
+	@pagination-font-color-disabled: #687378;
+	@pagination-number-padding: 3px 8px 0; /* Needs changing based on font size */
+	@pagination-arrow-padding: 1px 8px 0; /* Needs changing based on font size */
+
+	/* --- 5.2 - Inputs ------------------------------------------------- */
+	@input-background: @white;
+	@input-border: 1px solid;
+	@input-border-color: @light-grey-4;
+	@input-border-solid-color: @light-grey-4; /* Used in areas such as addon inputs (inputs with icons) */
+	/* Border Radius - only enter single value as used for single corners */
+	@input-border-top-left-radius: @input-items-border-radius;
+	@input-border-top-right-radius: @input-items-border-radius;
+	@input-border-bottom-right-radius: @input-items-border-radius;
+	@input-border-bottom-left-radius: @input-items-border-radius;
+	@input-icon-background-color: @white;
+	@input-icon-size: @icon-size-small;
+	@input-clear-icon-color: @dark-close-icons;
+	@input-clear-padding-right: 29px;
+	@input-warning-border-color: @red; /* Used for when an input or select that has an error */
+	@input-form-font-size: @font-size-small;
+	@input-padding: 7px;
+
+	/* Watermark */
+	@watermark-font-color: @light-grey-4;
+	@watermark-font-style: italic;
+
+	/* Text Areas */
+	@text-area-background: @white;
+	@text-area-border-bottom: 1px solid @light-grey-4;
+	@text-area-border-left: 1px solid @light-grey-4;
+	@text-area-border-right: 1px solid @light-grey-4;
+	@text-area-border-top: 1px solid @light-grey-4;
+	@text-area-padding: 6px;
+	/* Border Radius - only enter single value as used for single corners */
+	@text-area-border-top-left-radius: @border-radius;
+	@text-area-border-top-right-radius: @border-radius;
+	@text-area-border-bottom-right-radius: @border-radius;
+	@text-area-border-bottom-left-radius: @border-radius;
+
+	/* --- 5.3 - Buttons ------------------------------------------------ */
+
+	/* --- Main Buttons --- */
+
+	/* General */
+	@btn-height: auto;
+	@btn-padding: 8px 24px;
+	@btn-line-height: @body-line-height;
+	@btn-font-size: @font-size-small;
+	@btn-font-family: @body-font-family;
+	@btn-font-weight: @body-font-weight;
+	/* Border Radius - only enter single value as used for single corners */
+	@btn-border-top-left-radius: @border-radius;
+	@btn-border-top-right-radius: @border-radius;
+	@btn-border-bottom-right-radius: @border-radius;
+	@btn-border-bottom-left-radius: @border-radius;
+
+	/* Normal */
+	@btn-background-top: @main-color;
+	@btn-background-bottom: @main-color;
+	@btn-border-color: @main-color;
+	@btn-border-bottom: 1px solid @btn-border-color;
+	@btn-border-left: 1px solid @btn-border-color;
+	@btn-border-right: 1px solid @btn-border-color;
+	@btn-border-top: 1px solid @btn-border-color;
+	@btn-font-color: @white;
+	@btn-box-shadow: none;
+
+	/* Hover */
+	@btn-background-top-hover: #00153B;
+	@btn-background-bottom-hover: #00153B;
+	@btn-border-bottom-hover: 1px solid #00153B;
+	@btn-border-left-hover: 1px solid #00153B;
+	@btn-border-right-hover: 1px solid #00153B;
+	@btn-border-top-hover: 1px solid #00153B;
+	@btn-font-color-hover: @btn-font-color;
+	@btn-box-shadow-hover: none;
+
+	/* --- Secondary Buttons --- */
+
+	/* General */
+	@btn-secondary-font-family: @body-font-family;
+	@btn-secondary-font-size:  @font-size-small;
+	@btn-secondary-font-weight: @body-font-weight;
+	@btn-secondary-height: auto;
+	@btn-secondary-line-height: @body-line-height;
+	@btn-secondary-border-top-left-radius: @btn-border-top-left-radius;
+	@btn-secondary-border-top-right-radius: @btn-border-top-right-radius;
+	@btn-secondary-border-bottom-right-radius: @btn-border-bottom-right-radius;
+	@btn-secondary-border-bottom-left-radius: @btn-border-bottom-left-radius;
+	@btn-secondary-padding: @btn-padding;
+
+	/* Normal */
+	@btn-secondary-background: transparent;
+	@btn-secondary-border-bottom: @btn-border-bottom;
+	@btn-secondary-border-left: @btn-border-left;
+	@btn-secondary-border-right: @btn-border-right;
+	@btn-secondary-border-top: @btn-border-top;
+	@btn-secondary-font-color:  @main-color;
+	@btn-secondary-box-shadow: @btn-box-shadow;
+	@btn-secondary-text-decoration: none;
+
+	/* Hover */
+	@btn-secondary-background-hover: #F4F5F6;
+	@btn-secondary-border-bottom-hover: @btn-secondary-border-bottom;
+	@btn-secondary-border-left-hover: @btn-secondary-border-left;
+	@btn-secondary-border-right-hover: @btn-secondary-border-right;
+	@btn-secondary-border-top-hover: @btn-secondary-border-top;
+	@btn-secondary-font-color-hover: @btn-secondary-font-color;
+	@btn-secondary-box-shadow-hover: none;
+	@btn-secondary-text-decoration-hover: none;
+
+	/* --- Disabled Buttons --- */
+	@btn-disabled-background: @light-grey-3;
+	@btn-disabled-border-color: @light-grey-3;
+	@btn-disabled-font-color: @light-grey-6;
+
+	/* Used to give a focus / disabled colour to text inputs */
+	@input-focus-background: #D9EDF7;
+	@input-disabled-background: @light-grey-4;
+	@input-disabled-border-color: @light-grey-3;
+	@input-disabled-font-color: @light-grey-6;
+
+	/* --- 5.4 - Type Ahead ------------------------------------------------ */
+	@type-ahead-background: @white;
+	@type-ahead-background-hover: @hover;
+	@type-ahead-border: 1px solid @light-grey-3;
+	@type-ahead-box-border-bottom: 1px solid #B2B2B2;
+	@type-ahead-box-border-left: 1px solid #B2B2B2;
+	@type-ahead-box-border-right: 1px solid #B2B2B2;
+	@type-ahead-box-border-top: 1px solid #B2B2B2;
+	/* Border Radius - only enter single value as used for single corners */
+	@type-ahead-box-border-top-left-radius: @border-radius;
+	@type-ahead-box-border-top-right-radius: @border-radius;
+	@type-ahead-box-border-bottom-right-radius: @border-radius;
+	@type-ahead-box-border-bottom-left-radius: @border-radius;
+	@type-ahead-box-shadow: @box-shadow;
+
+/* -- 6 - Table ----------------------------------------------------------------------------------------- */
+
+	/* General */
+	@table-background: @portlet-background;
+	@table-font-size: @font-size-small;
+	@table-hightlight-row-background: @highlight-row; /* Important information row */
+	@table-sort-column-background: @sort-column; /* Column table is sorted on */
+	@table-zebra-row-column: @zebra-row; /* Every other row colour */
+	@table-border-spacing: 0;
+	@table-cell-padding-top: 10px;
+	@table-cell-padding-right: 15px;
+	@table-cell-padding-bottom: 10px;
+	@table-cell-padding-left: 15px;
+	@table-cell-padding: @table-cell-padding-top @table-cell-padding-right @table-cell-padding-bottom @table-cell-padding-left;
+
+	/* Body Borders */
+	@table-border-bottom: none; /* If not border row bottom added this needs to be added to complete the border on the table */
+	@table-row-border-bottom: @table-row-border;
+	@table-row-border-left: none;
+	@table-row-border-right: none;
+	@table-row-border-top: none;
+	@table-row-first-column-border: none;
+	@table-row-last-column-border: none;
+	/* Border Radius - only enter single value as used for single corners */
+	@table-border-top-left-radius: @table-border-radius;
+	@table-border-top-right-radius: @table-border-radius;
+	@table-border-bottom-right-radius: 0;
+	@table-border-bottom-left-radius: 0;
+
+	/* Icons */
+	@table-icon-color: @link; /* Icons within the table e.g. drilldowns */
+	@table-icon-color-hover: @link-hover;
+	@table-sort-color: @main-font; /* Icons to sort the table found in the header row so dark if header row is light etc */
+	@table-sort-selected-color: @table-sort-color;
+	@table-sort-focus-color: @table-sort-color;
+	@table-icon-font-size: @icon-size-small;
+
+	/* Header Row */
+	@table-header-row-background: @header-row;
+	@table-header-row-border-bottom: @header-row-border;
+	@table-header-row-border-left: none;
+	@table-header-row-border-right: none;
+	@table-header-row-border-top: none;
+	@table-header-row-first-column-border: none;
+	@table-header-row-last-column-border: none;
+	@table-header-row-font-color: @header-row-font;
+	@table-header-row-font-weight: @header-row-font-weight;
+	@table-header-row-link-color: @header-row-font;
+	@table-header-row-link-color-hover: @hover;
+	@table-header-row-link-sortlink-width: 20px;
+
+	/* Totals Row */
+	@table-totals-row-background: @totals-row;
+	@table-totals-row-border-bottom: none;
+	@table-totals-row-border-left: none;
+	@table-totals-row-border-right: none;
+	@table-totals-row-border-top: @totals-row-border;
+	@table-totals-row-first-column-border: none;
+	@table-totals-row-last-column-border: none;
+	@table-totals-row-font-color: @totals-row-font;
+	@table-totals-row-font-weight: @totals-row-font-weight;
+	@table-totals-row-font-family: @totals-row-font-family;
+
+/*-- 7 - sk-jumpbar -------------------------------------------------------------------------------------*/
+
+	/* Width */
+	@sk-jumpbar-width: 185px;
+	@sk-jumpbar-min-width: @sk-jumpbar-width;
+	@sk-jumpbar-max-width: @sk-jumpbar-width;
+
+	/* Icon / Font Sizes */
+	@sk-jumpbar-icon-size: @font-size-small;
+	@sk-jumpbar-font-size: @font-size-small;
+
+	/* --- Main colour --- */
+	@sk-jumpbar-background-color: @navigation-background;
+	@sk-jumpbar-box-shadow: none;
+	@sk-jumpbar-font-color: @navigation-font;
+
+	/* --- Hover / selected colour --- */
+	@sk-jumpbar-background-color-hover: @navigation-background-hover-active;
+	@sk-jumpbar-font-color-hover: @navigation-font-hover-active;
+	@sk-jumpbar-select-arrow-color: @white; /* This is best matched to the body background colour */
+	@sk-jumpbar-active-before-color: @sk-jumpbar-background-color-hover;
+	@sk-jumpbar-active-after-color: @sk-jumpbar-font-color;
+
+	/* --- Tab separation colour --- */
+	@sk-jumpbar-border-bottom: none;
+	@sk-jumpbar-border-top: none;
+
+	/* -- Padding around menu items -- */
+	@sk-jumpbar-menu-padding: 12px 24px;
+
+/*-- 8 - sk-header --------------------------------------------------------------------------------------*/
+
+	/* --- 8.1 - General (Main colour / border bottom) -------------------- */
+	@header-height: 50px;
+	@header-background-color: @primary;
+	@header-border-bottom: none;
+	@header-border-left: none;
+	@header-border-right: none;
+	@header-border-top: none;
+	/* Border Radius - only enter single value as used for single corners */
+	@header-border-top-left-radius: 0;
+	@header-border-top-right-radius: 0;
+	@header-border-bottom-right-radius: 0;
+	@header-border-bottom-left-radius: 0;
+	@header-box-shadow: none;
+	@header-font-color: @white;
+	@header-font-active-color: @header-font-color;
+	@header-font-focus-color: @header-font-color;
+
+	/* --- Sign Out --- */
+	/* Text */
+	@sign-out-font-color: @white;
+	@sign-out-font-color-hover: @white;
+	@sign-out-text-decoration: @link-text-decoration;
+	@sign-out-text-decoration-hover: @link-hover-text-decoration;
+	@sign-out-icon-position-top: 0px;
+
+	/* Icon */
+	@sign-out-icon-display: none;
+
+	@logo-background-color: @header-background-color;
+	@logo-size: 140px;
+	@logo-margin-small-screen: @logo-size + 30px;
+	@logo-margin-large-screen: 5px 0 0 -78px;
+
+	/* Skip navigation */
+	@skip-nav-background-color: @main-color;
+	@skip-nav-border: 1px solid @btn-border-color;
+	@skip-nav-border-radius: @border-radius;
+	@skip-nav-font-color: @white;
+	@skip-nav-margin-top: 0.375rem;
+	@skip-nav-min-width: 12.8rem;
+	@skip-nav-padding: 0.5rem;
+	@skip-nav-left: calc(@sk-jumpbar-max-width + 20px);
+	@skip-nav-top: 4rem;
+	@skip-nav-font-size: @font-size-small;
+	@skip-nav-font-family: @body-font-family;
+	@skip-nav-font-weight: @body-font-weight;
+
+	/* --- 8.2 - Options (Dropdown items in the header) ------------------- */
+
+	@header-item-background-color: @portlet-background; /* General background colours */
+	@header-item-background-hover-color: @hover; /* Hover background colours */
+	@header-item-background-active-color: @header-background-color; /* Selected background colours */
+	@header-item-border: @header-footer-border;
+	/* Border Radius - only enter single value as used for single corners */
+	@header-item-border-top-left-radius: @border-radius;
+	@header-item-border-top-right-radius: 0;
+	@header-item-border-bottom-right-radius: @border-radius;
+	@header-item-border-bottom-left-radius: @border-radius;
+	@header-item-padding: 6px 20px;
+	@header-item-font-color: @main-font;
+	@header-item-font-focus-color: @focus;
+	@header-item-font-color-hover: @hover;
+	@header-item-font-size: @font-size-small;
+	@header-item-icon-size: @icon-size-large;
+	@header-dropdown-item-icon-size: @icon-size-small;
+	@header-item-font-active-color: @main-font;
+	@header-item-line-height: @line-height;
+	@header-item-drop-shadow: @box-shadow; /* Box shadow */
+
+	/* --- 8.3 - Logo ----------------------------------------------------- */
+	@logo-width: 500px; /* Max 500px */
+	@logo-height: 40px; /* Max 40px */
+	@logo-padding: 3px 5px 8px -10px;
+
+/*-- 9 - sk-footer -------------------------------------------------------------------------------------*/
+
+	@sk-footer-background: @white;
+	@sk-footer-border-bottom: none;
+	@sk-footer-border-left: none;
+	@sk-footer-border-right: none;
+	@sk-footer-border-top: none;
+	@sk-footer-font-color: @primary;
+	@sk-footer-box-shadow: none;
+	@sk-footer-margin: 0; /* Placement of footer text */
+
+/*-- 10 - sk-overview-list -----------------------------------------------------------------------------*/
+
+	/* --- General --- */
+	@overview-list-background: @heading-background;
+	@overview-list-border: none;
+	/* Border Radius - only enter single value as used for single corners */
+	@overview-list-border-top-left-radius: @border-radius;
+	@overview-list-border-top-right-radius: @border-radius;
+	@overview-list-border-bottom-right-radius: @border-radius;
+	@overview-list-border-bottom-left-radius: @border-radius;
+	@overview-list-box-shadow: none;
+
+	/* --- Header (Box headers) --- */
+	@overview-list-background-header: @light-grey-3;
+	@overview-list-font-color-header: @black;
+	@overview-list-font-family-header: 'Poppins-Medium',-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+	@overview-list-font-size-header: @font-size-medium;
+	@overview-list-font-weight-header: normal;
+	@overview-list-background-sub-header: @heading-boxed-background;
+	@overview-list-font-color-sub-header: @heading-boxed-font-color;
+	@overview-list-header-border-top-left-radius: @border-radius;
+	@overview-list-header-border-top-right-radius: @border-radius;
+	@overview-list-header-border-bottom-right-radius: @border-radius;
+	@overview-list-header-border-bottom-left-radius: @border-radius;
+
+	/* --- Icons --- */
+	@overview-list-icon-color: @main-color;
+	@overview-list-icon-display: none;/* Choose to display (use inline-block to display) */
+	@overview-list-icon-size: @icon-size-small;
+
+	/* --- Links --- */
+	@overview-list-inner-background: @white;
+	@overview-list-inner-border: 0px solid @dark-grey-3;
+	/* Border Radius - only enter single value as used for single corners */
+	@overview-list-inner-border-top-left-radius: @border-radius;
+	@overview-list-inner-border-top-right-radius: @border-radius;
+	@overview-list-inner-border-bottom-right-radius: @border-radius;
+	@overview-list-inner-border-bottom-left-radius: @border-radius;
+	@overview-list-inner-box-shadow: @box-shadow;
+	@overview-list-link-color: @main-font;
+	@overview-list-link-color-hover: @main-font-hover;
+	@overview-list-background-color-hover: @light-grey-4;
+	@overview-list-inner-font-family: @body-font-family;
+	@overview-list-inner-font-size: @font-size-small;
+	@overview-list-inner-font-weight: bold;
+	@overview-list-inner-header-font-color: @main-font;
+	@overview-list-inner-header-font-family: @body-font-family;
+	@overview-list-inner-header-font-size: @font-size-small;
+	@overview-list-inner-header-font-weight: bold;
+	@overview-list-inner-margin: 10px 0;
+
+	/* --- Observations (Additional information under each link (admin) --- */
+	@overview-list-observation-background: @portlet-background;
+	@overview-list-observation-background-hover: transparent;
+	@overview-list-observation-border-bottom: none;
+	@overview-list-observation-border-left: none;
+	@overview-list-observation-border-right: none;
+	@overview-list-observation-border-top: none;
+	/* Border Radius - only enter single value as used for single corners */
+	@overview-list-observation-border-top-left-radius: @border-radius;
+	@overview-list-observation-border-top-right-radius: @border-radius;
+	@overview-list-observation-border-bottom-right-radius: @border-radius;
+	@overview-list-observation-border-bottom-left-radius: @border-radius;
+	@overview-list-observation-font-color: @main-font;
+
+	/* --- Customer Report List --- */
+	@overview-list-custom-report-header-font-color: @main-font;
+	@overview-list-custom-report-header-font-weight: bold;
+	@overview-list-custom-report-font-color: @main-font;
+	@overview-list-custom-report-font-weight: normal;
+	/* Custom Report all reports page */
+	@custom-all-reports-background: @white;
+	@custom-all-reports-background-hover: @hover;
+	@custom-all-reports-border: 1px solid @dark-grey-3;
+	/* Border Radius - only enter single value as used for single corners */
+	@custom-all-reports-border-top-left-radius: @border-radius;
+	@custom-all-reports-border-top-right-radius: @border-radius;
+	@custom-all-reports-border-bottom-right-radius: @border-radius;
+	@custom-all-reports-border-bottom-left-radius: @border-radius;
+
+/*-- 11 - sk-menu --------------------------------------------------------------------------------------*/
+
+	/* --- Main section - Complete bar --- */
+	@menu-background: @white;
+	@menu-font-color: @main-font;
+	@menu-border-bottom: none;
+	@menu-border-left: none;
+	@menu-border-right: none;
+	@menu-border-top: none;
+	/* Border Radius - only enter single value as used for single corners */
+	@menu-border-top-left-radius: 0;
+	@menu-border-top-right-radius: 0;
+	@menu-border-bottom-right-radius: 0;
+	@menu-border-bottom-left-radius: 0;
+	@menu-box-shadow: none;
+	@menu-margin: 0;
+
+	/* --- Main section - Individual items --- */
+	@menu-item-background: transparent;
+	@menu-item-border-bottom: 3px solid transparent;
+	@menu-item-border-left: 0px solid none;
+	@menu-item-border-right: 0px solid none;
+	@menu-item-border-top: 0px solid none;
+	@menu-nav-last-border: none; /* Turn the last border off when solid menu */
+	/* Border Radius - only enter single value as used for single corners */
+	@menu-item-border-top-left-radius: none;
+	@menu-item-border-top-right-radius: none;
+	@menu-item-border-bottom-right-radius: none;
+	@menu-item-border-bottom-left-radius: none;
+	@menu-item-box-shadow: none;
+	@menu-item-margin: 0 0px 1px 0; /* Allows for spacing in pill style menu */
+	@menu-item-font-weight: normal;
+	@menu-item-padding: 15px 14px;
+	@menu-item-text-transform: uppercase;
+	@menu-caret-position: 9px 0 0 10px;
+
+	/* --- Main section - hover --- */
+	@menu-background-hover: transparent;
+	@menu-font-hover-color: @link;
+	@menu-item-border-bottom-hover: 3px solid @menu-font-hover-color;
+	@menu-item-border-left-hover: 0px;
+	@menu-item-border-right-hover: 0px;
+	@menu-item-border-top-hover: 0px;
+	@menu-item-font-weight-hover: normal;
+
+	/* --- Main section - active --- */
+	@menu-background-active: transparent;
+	@menu-font-active-color: @link;
+	@menu-item-border-bottom-active: 3px solid @menu-font-active-color;
+	@menu-item-border-left-active: @menu-item-border-left-hover;
+	@menu-item-border-right-active: @menu-item-border-right-hover;
+	@menu-item-border-top-active: @menu-item-border-top-hover;
+	@menu-item-font-weight-active: normal;
+
+	/* --- Sub menu section - normal --- */
+	@menu-sub-background: @white;
+	@menu-sub-font-color: @main-font;
+	@menu-sub-border: 1px solid @dark-grey-2;
+	/* Border Radius - only enter single value as used for single corners */
+	@menu-sub-border-top-left-radius: @border-radius;
+	@menu-sub-border-top-right-radius: @border-radius;
+	@menu-sub-border-bottom-right-radius: @border-radius;
+	@menu-sub-border-bottom-left-radius: @border-radius;
+	@menu-sub-left: 0;
+	@menu-sub-top: 52px;
+	@menu-sub-width: 240px;
+
+	/* --- Sub menu section - hover --- */
+	@menu-sub-background-hover: @dark-grey-2;
+	@menu-sub-font-hover-color: @white;
+	@menu-sub-font-weight-hover: normal;
+
+	/* --- Sub menu section - active --- */
+	@menu-sub-background-active: @dark-grey-2;
+	@menu-sub-font-active-color: @white;
+	@menu-sub-font-weight-active: normal;
+
+/*-- 12 - sk-wrapper -----------------------------------------------------------------------------------*/
+	/* Needs to be the same as sk-panel to make all the overview portlets look like portlets */
+	@sk-wrapper-background: @portlet-background;
+	@sk-wrapper-border-bottom: none;
+	@sk-wrapper-border-left: none;
+	@sk-wrapper-border-right: none;
+	@sk-wrapper-border-top: none;
+	/* Only enter single value as used for single corners */
+	@sk-wrapper-border-top-left-radius: @portlet-border-radius;
+	@sk-wrapper-border-top-right-radius: @portlet-border-radius;
+	@sk-wrapper-border-bottom-right-radius: @portlet-border-radius;
+	@sk-wrapper-border-bottom-left-radius: @portlet-border-radius;
+	@sk-wrapper-box-shadow: @box-shadow;
+	@sk-wrapper-font-color: @heading; /* Portlet title colour */
+	@sk-wrapper-font-family: @heading-font-family;
+	@sk-wrapper-font-size: @font-size-h2;
+	@sk-wrapper-font-weight: @heading-font-weight;
+	@sk-wrapper-heading-background-color: @heading-background; /* Portlet background colour for title */
+	@sk-wrapper-line-height: @line-height;
+	@sk-wrapper-title-border-bottom: none;
+	@sk-wrapper-title-padding: 5px 0 5px 10px;
+
+	/* Section heading variables */
+	@sk-wrapper-heading-section-heading-background: @sk-wrapper-heading-background-color;
+	@sk-wrapper-heading-section-heading-border-left: @sk-wrapper-border-left;
+	@sk-wrapper-heading-section-heading-border-right: @sk-wrapper-border-right;
+	@sk-wrapper-heading-section-heading-border-top: @sk-wrapper-border-top;
+	@sk-wrapper-heading-section-heading-border-bottom: none;
+	@sk-wrapper-heading-section-heading-border-radius: @sk-wrapper-border-top-left-radius @sk-wrapper-border-top-right-radius 0 0;
+
+	@sk-wrapper-heading-section-heading-title-border-bottom: 0;
+	@sk-wrapper-heading-section-heading-title-color: @heading-h1-font-color;
+	@sk-wrapper-heading-section-heading-title-font-family: @heading-h1-font-family;
+	@sk-wrapper-heading-section-heading-title-font-size: @heading-h1-font-size;
+	@sk-wrapper-heading-section-heading-title-font-weight: @heading-h1-font-weight;
+	@sk-wrapper-heading-section-heading-title-line-height: @heading-h1-line-height;
+	@sk-wrapper-heading-section-heading-title-padding: @sk-wrapper-title-padding;
+
+/*-- 13 - sk-panel -------------------------------------------------------------------------------------*/
+	/* Needs to be the same as sk-wrapper to make all the overview portlets look like portlets */
+	@sk-panel-background: @sk-wrapper-background;
+	@sk-panel-border-bottom: @sk-wrapper-border-bottom;
+	@sk-panel-border-left: @sk-wrapper-border-left;
+	@sk-panel-border-right: @sk-wrapper-border-right;
+	@sk-panel-border-top: @sk-wrapper-border-top;
+	/* Only enter single value as used for single corners */
+	@sk-panel-border-top-left-radius: @sk-wrapper-border-top-left-radius;
+	@sk-panel-border-top-right-radius: @sk-wrapper-border-top-right-radius;
+	@sk-panel-border-bottom-right-radius: @sk-wrapper-border-bottom-right-radius;
+	@sk-panel-border-bottom-left-radius: @sk-wrapper-border-bottom-left-radius;
+	@sk-panel-box-shadow: @sk-wrapper-box-shadow;
+	@sk-panel-header-font-color: @sk-wrapper-font-color; /* Panel title colour */
+	@sk-panel-font-family: @sk-wrapper-font-family;
+	@sk-panel-header-font-size: @sk-wrapper-font-size;
+	@sk-panel-header-font-weight: @sk-wrapper-font-weight;
+	@sk-panel-header-background-color: @sk-wrapper-heading-background-color; /* Panel background colour for title */
+	@sk-panel-line-height: @sk-wrapper-line-height;
+	@sk-panel-title-border-bottom: @sk-wrapper-title-border-bottom;
+	@sk-panel-title-padding: @sk-wrapper-title-padding;
+
+/*-- 14 - sk-box ---------------------------------------------------------------------------------------*/
+
+	/* --- General --- */
+	@sk-box-border: 1px solid @main-font;
+	@sk-box-background-hover: @hover;
+	/* Only enter single value as used for single corners */
+	@sk-box-border-top-left-radius: @border-radius;
+	@sk-box-border-top-right-radius: @border-radius;
+	@sk-box-border-bottom-right-radius: @border-radius;
+	@sk-box-border-bottom-left-radius: @border-radius;
+
+	/* --- Main item in the box - link when available --- */
+	@sk-box-title-font-color: @heading;
+	@sk-box-title-font-link-color: @link;
+	@sk-box-title-font-link-color-hover: @link-hover;
+
+	/* --- Cost in the box --- */
+	@sk-box-cost-font-color: @main-color;
+	@sk-box-cost-font-weight: bold;
+	@sk-box-cost-large-font-weight: @sk-box-cost-font-weight;
+	@sk-box-cost-small-font-weight: @sk-box-cost-font-weight;
+	@sk-box-cost-font-family: @body-font-family;
+	@sk-box-cost-large-font-family: @sk-box-cost-font-family;
+	@sk-box-cost-small-font-family: @sk-box-cost-font-family;
+	@sk-box-cost-small-font-size: @font-size-small;
+	@sk-box-cost-large-font-size: @font-size-medium;
+	@sk-box-cost-large-line-height: @body-line-height;
+	@sk-box-cost-small-line-height: @body-line-height;
+
+	/** Labels in the box (no text currently shown) */
+	@sk-box-label-font-family: @body-font-family;
+	@sk-box-label-font-weight: normal;
+	@sk-box-label-small-font-size: @sk-box-label-large-font-size;
+	@sk-box-label-large-font-size: @font-size-medium;
+
+	/** Cost labels on the right */
+	@sk-box-label-label-font-family: @body-font-family;
+	@sk-box-label-label-font-weight: normal;
+	@sk-box-label-label-font-size: @font-size-small;
+
+	/** value 2 */
+	@sk-box-value2-font-family: @body-font-family;
+	@sk-box-value2-small-font-family: @sk-box-value2-font-family;
+	@sk-box-value2-large-font-family: @sk-box-value2-font-family;
+	@sk-box-value2-font-weight: normal;
+	@sk-box-value2-small-font-weight: @sk-box-value2-font-weight;
+	@sk-box-value2-large-font-weight: @sk-box-value2-font-weight;
+	@sk-box-value2-small-font-size: @sk-box-small-font-size;
+	@sk-box-value2-large-font-size: @sk-box-large-font-size;
+	@sk-box-value2-small-line-height: @sk-box-small-line-height;
+	@sk-box-value2-large-line-height: @sk-box-large-line-height;
+
+	/*-- Graph Grid Values */
+	@sk-box-category-font-size: @sk-box-small-font-size;
+	@sk-box-category-font-weight: bold;
+	@sk-box-category-font-family: @sk-box-font-family;
+	@sk-box-category-line-height: @body-line-height;
+
+	@sk-box-series-font-size: @sk-box-small-font-size;
+	@sk-box-series-font-weight: @sk-box-font-weight;
+	@sk-box-series-font-family: @sk-box-font-family;
+	@sk-box-series-line-height: @body-line-height;
+
+	@sk-box-series-data-font-size: @sk-box-cost-small-font-size;
+	@sk-box-series-data-font-weight: @sk-box-cost-small-font-weight;
+	@sk-box-series-data-font-family: @sk-box-cost-small-font-family;
+	@sk-box-series-data-line-height: @sk-box-cost-small-line-height;
+
+	/* --- Selected boxes --- */
+	/* Only enter single value as used for single corners */
+	@sk-box-selected-border-top-left-radius: @border-radius;
+	@sk-box-selected-border-top-right-radius: @border-radius;
+	@sk-box-selected-border-bottom-right-radius: 0;
+	@sk-box-selected-border-bottom-left-radius: 0;
+	@sk-box-selected-background-color: @hover;
+
+	/* Icon Font Declaration */
+
+	/* Usage Summary Icons */
+	@usage-icon-all: "\e99a";
+	@usage-icon-1: "\e911";
+	@usage-icon-2: "\e90e";
+	@usage-icon-3: "\e941";
+
+	/* Charge Summary Icons */
+	@charge-icon-all: "\e936";
+	@charge-icon-1: "\e939";
+	@charge-icon-2: "\e93d";
+	@charge-icon-3: "\e938";
+	@charge-icon-4: "\e93c";
+	@charge-icon-5: "\e92a";
+	@charge-icon-6: "\e92b";
+	@charge-icon-7: "\e937";
+	@charge-icon-8: "\e93b";
+	@charge-icon-9: "\e918";
+	@charge-icon-10: "\e95d";
+	@charge-icon-11: "\e959";
+	@charge-icon-12: "\e976";
+
+	/* Multiplay Summary Icons */
+	@multiplay-icon-1: "\e998";
+	@multiplay-icon-2: "\e968";
+	@multiplay-icon-3: "\e9a8";
+	@multiplay-icon-4: "\e95d";
+	@multiplay-icon-5: "\e96d";
+	@multiplay-icon-6: "\e9aa";
+	@multiplay-icon-7: "\e91f";
+	@multiplay-icon-8: "\e944";
+	@multiplay-icon-9: "\e945";
+	@multiplay-icon-10: "\e9ac";
+
+	/* Destinations Summary Icons */
+	@destination-icon-all: "\e924";
+	@destination-icon-1: "\e962";
+	@destination-icon-2: "\e923";
+	@destination-icon-3: "\e97d";
+	@destination-icon-4: "\e96f";
+	@destination-icon-5: "\e927";
+	@destination-icon-6: "\e96d";
+	@destination-icon-7: "\e910";
+	@destination-icon-8: "\e986";
+	@destination-icon-9: "\e9a7";
+	@destination-icon-10: "\e94c";
+	@destination-icon-11: "\e9a5";
+	@destination-icon-12: "\e9aa";
+	@destination-icon-13: "\e968";
+	@destination-icon-14: "\e941";
+	@destination-icon-15: "\e9a9";
+
+/*-- 15 - sk-struct-control --------------------------------------------------------------------------*/
+
+	/* --- Main --- */
+	@sk-struct-control-font-family: @body-font-family;
+	@sk-struct-control-background: @white;
+	@sk-struct-control-hover-background: @hover;
+	@sk-struct-control-border: 1px solid @dark-grey-2;
+	/* Only enter single value as used for single corners */
+	@sk-struct-control-top-left-radius: @portlet-section-border-radius;
+	@sk-struct-control-top-right-radius: @portlet-section-border-radius;
+	@sk-struct-control-border-bottom-right-radius: @portlet-section-border-radius;
+	@sk-struct-control-border-bottom-left-radius: @portlet-section-border-radius;
+
+	/* --- Accordion --- */
+	@accordion-header-active-background: @main-color;
+	@sk-struct-control-accordion-background: @dark-grey-2;
+	@sk-struct-control-accordion-font-color: @white;
+	@bs-accordion-card-header-background: @sk-struct-control-accordion-background;
+	@bs-accordion-card-header-font-color: @sk-struct-control-accordion-font-color;
+
+	/* --- Read Only --- */
+	@sk-struct-control-border-read-only: @disabled;
+
+/*-- 16 - breadcrumb-selection --------------------------------------------------------------------------*/
+	@breadcrumb-selection-anchor-font-size: @body-font-size;
+	@breadcrumb-selection-anchor-font-family: @body-font-family;
+	@breadcrumb-selection-anchor-font-weight: normal;
+
+/*-- 17 - invoice-selector --------------------------------------------------------------------------*/
+
+	/* --- Main --- */
+	@invoice-control-background: @portlet-background;
+	@invoice-control-selected-background: @hover;
+	@invoice-control-hover-background: @hover;
+	@invoice-control-border: @portlet-background;
+	/* Only enter single value as used for single corners */
+	@invoice-control-top-left-radius: 0;
+	@invoice-control-top-right-radius: @border-radius;
+	@invoice-control-border-bottom-right-radius: @border-radius;
+	@invoice-control-border-bottom-left-radius: 0;
+	@invoice-control-arrow-background: @input-icon-background-color;
+	@invoice-control-arrow-color: @main-color;
+	@invoice-control-heading-background: @heading-boxed-background;
+	@invoice-control-heading-font-color: @heading-boxed-font-color;
+	@invoice-control-seprator: @border;
+
+/*-- 18 - Tabs -------------------------------------------------------------------------------------*/
+
+	/* --- Tab Styles ---*/
+	/* Only enter single value as used for single corners */
+	@tab-border-top-left-radius: @border-radius;
+	@tab-border-top-right-radius: @border-radius;
+	@tab-border-bottom-left-radius: 0;
+	@tab-border-bottom-right-radius: 0;
+	@tab-font-family: Poppins-Medium;
+	/* --- In-Active ---*/
+	@tab-background: @light-grey-4;
+	@tab-border-bottom: none;
+	@tab-border-left: none;
+	@tab-border-right: none;
+	@tab-border-top: none;
+	@tab-inactive-font-color: @dark-grey-4;
+	@tab-inactive-font-weight: normal;
+	/* --- Active ---*/
+	@tab-background-active: @white; /* Suggest this matches tab content background for a cleaner look */
+	@tab-border-active-bottom: none;
+	@tab-border-active-left: none;
+	@tab-border-active-right: none;
+	@tab-border-active-top: none;
+	@tab-active-font-color: @black;
+	@tab-active-font-weight: normal;
+	/* --- Tab Content ---*/
+	@tab-content-background: @white;
+	@tab-content-border-bottom: none;
+	@tab-content-border-left: none;
+	@tab-content-border-right: none;
+	@tab-content-border-top:  none;
+	/* Only enter single value as used for single corners */
+	@tab-content-border-top-left-radius: 0;
+	@tab-content-border-top-right-radius: 0;
+	@tab-content-border-bottom-left-radius: 0;
+	@tab-content-border-bottom-right-radius: 0;
+
+/*-- 19 - Collapsed / Popup Variables ---------------------------------------------------------------*/
+
+	/* --- Collapsed --- */
+	@opacity-background-color: @portlet-background;
+	@collapsed-link-background: @block-link-background; /* Background colour of the link back on collapsed areas */
+
+	/* --- Popup --- */
+	@popup-background: @portlet-background;
+	@popup-border: 1px solid @dark-grey-2;
+	/* Only enter single value as used for single corners */
+	@popup-top-left-radius: @portlet-border-radius;
+	@popup-top-right-radius: @portlet-border-radius;
+	@popup-border-bottom-right-radius: @portlet-border-radius;
+	@popup-border-bottom-left-radius: @portlet-border-radius;
+
+	/* --- Popup Headers --- */
+	@popup-header-background: transparent;
+	@popup-header-font-color: @main-font;
+	@popup-header-font-size: @font-size-large;
+	@popup-header-font-weight: normal;
+
+	/* --- Popup Close Link --- */
+	@popup-close-font-color: @main-font;
+	@popup-close-font-color-hover: @hover;
+
+/*-- 20 - Welcome Message --------------------------------------------------------------------------*/
+
+	@welcome-message-background: @portlet-background;
+	@welcome-message-font-color: @main-font;
+	@welcome-message-icon-color: @main-color;
+	@welcome-message-font-family: @body-font-family;
+	@welcome-message-font-weight: normal;
+	@welcome-message-small-font-size: @font-size-small;
+	@welcome-message-small-line-height: @line-height;
+	@welcome-message-large-font-family: @heading-font-family;
+	@welcome-message-large-font-size: @font-size-medium;
+	@welcome-message-large-line-height: @line-height;
+	@welcome-message-large-font-weight: normal;
+	@welcome-message-notification-background-hover: @hover;
+
+	/* Icon */
+	@welcome-message-icon-display: none; /* Hide (none) or show (table-cell) the icon */
+	@welcome-message-icon-size: 52px;
+
+	/* Bill Icon */
+	@bill-icon-display: none; /* Hide (none) or show (table-cell) the icon */
+	@bill-content-display: block; /* If no icon (block) or with icon (table-cell) */
+	@bill-icon-color: @main-font;
+	@bill-icon-size: 52px;
+
+/*-- 21 - sk-invoice -------------------------------------------------------------------------------*/
+
+	/* --- Invoice Summary Box --- */
+	@sk-invoice-background-color: @inform-blue-light-1;
+	@sk-invoice-border-bottom: 1px solid @inform-blue-light-1;
+	@sk-invoice-border-left: 1px solid @inform-blue-light-1;
+	@sk-invoice-border-right: 1px solid @inform-blue-light-1;
+	@sk-invoice-border-top: 1px solid @inform-blue-light-1;
+	@sk-invoice-font-color:@main-font;
+	@sk-invoice-border-radius: @border-radius; /* Only enter single value as used for single corners */
+
+	/* --- Summary Table (totals row in invoice summary) --- */
+	@total-cost-row-background-color: @inform-blue-light-1;
+	@total-cost-row-color: @main-font;
+	@total-cost-row-font-family: @heading-font-family;
+	@total-cost-row-font-size: @font-size-medium;
+	@total-cost-row-font-weight: normal;
+	@total-cost-row-border-radius: 0; /* Only enter single value as used for single corners */
+	@bill-summary-handset-background-hover: @hover;
+	@bill-summary-handsets-border: 1px solid @dark-grey-3; /* Border that seprates the service numbers */
+	@summary-table-font-size: @font-size-small;
+	@summary-table-font-weight: normal;
+	@summary-table-td-padding: 5px;
+
+	/* --- Invoice Portlet Box --- */
+	@sk-invoice-details-content-border: @sk-box-border;
+	@sk-invoice-details-background-color: @portlet-background;
+	@sk-invoice-details-border: none;
+	@sk-invoice-details-border-radius: @border-radius; /* Only enter single value as used for single corners */
+	@sk-invoice-details-invoice-type-button-text-transform: @menu-item-text-transform;
+	@sk-invoice-details-invoice-type-button-font-size: @radio-button-font-size;
+
+	/* --- Invoice Details Boxed View (Load more link for invoices) --- */
+	@sk-invoice-details-load-more-background-color: transparent;
+	@sk-invoice-details-load-more-background-hover-color: transparent;
+	/* Only enter single value as used for single corners */
+	@sk-invoice-details-load-more-border-top-left-radius: @border-radius;
+	@sk-invoice-details-load-more-border-top-right-radius: @border-radius;
+	@sk-invoice-details-load-more-border-bottom-right-radius: @border-radius;
+	@sk-invoice-details-load-more-border-bottom-left-radius: @border-radius;
+	@sk-invoice-details-load-more-font-color: @link;
+	@sk-invoice-details-load-more-font-hover-color: @link-hover;
+	@sk-invoice-details-load-more-font-size: @font-size-small;
+	@sk-invoice-details-load-more-font-weight: bold;
+
+	/* --- Invoice Boxed Details --- */
+	@sk-invoice-number-font-size: @font-size-small;
+	@sk-invoice-number-font-weight: bold;
+	@sk-invoice-description-font-size: @font-size-small;
+	@sk-invoice-description-font-weight: normal;
+	@sk-invoice-date-font-size: @font-size-small;
+	@sk-invoice-date-font-weight: normal;
+	@sk-invoice-cost-font-size: @font-size-small;
+	@sk-invoice-cost-font-weight: normal;
+	@sk-invoice-pdf-link-font-size: @font-size-small;
+	@sk-invoice-pdf-link-font-weight: normal;
+
+	/* --- Icons --- */
+	@bill-info-color: @heading-boxed-background; /* Invoice Summary icon colour */
+	@sk-invoice-icon-font-color: @heading-boxed-font-color; /* Payment box icon colour */
+	@sk-invoice-icon-display: none; /* Hide (none) or show (table-cell) the icon - make sure to set the content display */
+	@sk-invoice-content-display: block; /* Block it icon not display otherwise table-cell */
+	@sk-invoice-details-boxed-icon-color: @sk-box-icon-color-2; /* Invoice portlet icon colour */
+	@sk-invoice-icon-size: 28px;
+
+	/* Payment Box (Separates the payment info  */
+	@sk-payment-border: 1px solid @heading-boxed-font-color;
+
+	/* --- Filter search box position --- */
+	@sk-invoice-position-right: 130px;
+	@sk-invoice-position-top: 20px;
+
+/*-- 22 - Accounts (Liferays accounts section) -------------------------------------------*/
+
+	/* --- General --- */
+	@account-background: @portlet-background;
+	@account-border: @border;
+	@account-border-radius: @border-radius; /* Only enter single value as used for single corners */
+	@account-font-color: @dark-grey-4;
+	/* --- Header --- */
+	@account-header-background: @heading-boxed-background;
+	@account-header-font-color: @heading-boxed-font-color;
+	/* --- Selected --- */
+	@account-header-selected-background: @main-font;
+	/* User Info Box */
+	@account-user-info-background: @hover;
+	@account-user-info-border: 1px solid @main-font;
+	@account-user-info-border-radius: @border-radius; /* Only enter single value as used for single corners */
+	@account-user-link-background: @dark-grey-4;
+	@account-user-link-color: @white;
+
+
+	@multi-auth-secret-border: 1px solid #677689;
+	@multi-auth-secret-border-radius: @border-radius; /* Only enter single value as used for single corners */
+	@multi-auth-confirmation-input-border: 1px solid #677689;
+	@multi-auth-confirmation-input-border-radius: 3px;
+	@multi-auth-confirmation-input-height-width: 68px;
+	@multi-auth-confirmation-input-line-height: 56px;
+	@multi-auth-confirmation-input-font-size: 46px;
+
+	@multi-auth-panel-authenticator-methods-border-radius: 3px;
+	@multi-auth-panel-authenticator-methods-preferences-border: 1px solid @main-color;
+
+	@multi-auth-registered-border: 2px solid @green;
+
+	@preferences-card-group-seperator: 1px solid #CCC;
+
+/*-- 23 - Reports (Styling for reports that are not done through the table styling) ---------------------------*/
+
+	/* --- Contact Modal --- */
+	@contact-modal-background: @portlet-background;
+	@contact-modal-border: @border;
+	@contact-modal-border-radius: @border-radius; /* Only enter single value as used for single corners */
+	@contact-modal-icon-color: @main-color;
+	@contact-modal-icon-select-background: @hover;
+
+	/* --- Filter / Presentation Boxes --- */
+
+	/* Header */
+	@report-filter-box-header-background: transparent; /* Used on presentation level boxes */
+	@report-filter-box-header-color: @main-font; /* Used on presentation level boxes - This also affect the caret */
+	@report-filter-box-header-border-bottom: none;
+	@report-filter-box-header-border-left: none;
+	@report-filter-box-header-border-right: none;
+	@report-filter-box-header-border-top: none;
+	/* Only enter single value as used for single corners */
+	@report-filter-box-header-top-left-radius: 0;
+	@report-filter-box-header-top-right-radius: 0;
+	@report-filter-box-header-border-bottom-right-radius: 0;
+	@report-filter-box-header-border-bottom-left-radius: 0;
+	@report-filter-box-caret-position: 0 8px;
+
+	/* Content */
+	@report-filter-box-background: @body-background;
+	@report-filter-box-border-bottom: 1px solid @main-font;
+	@report-filter-box-border-left: none;
+	@report-filter-box-border-right: none;
+	@report-filter-box-border-top: none;
+	/* Only enter single value as used for single corners */
+	@report-filter-box-border-top-left-radius: 20px;
+	@report-filter-box-border-top-right-radius: 20px;
+	@report-filter-box-border-bottom-right-radius: 20px;
+	@report-filter-box-border-bottom-left-radius: 20px;
+	@filter-breadcrumb-icon-color: @light-grey-6;
+
+	/* Report Keys */
+	@report-keys-box-header-background: transparent; /* Used on presentation level boxes */
+	@report-keys-box-header-color: @primary;
+	@report-keys-box-background: @body-background;
+	@report-keys-box-border-bottom: 1px solid @primary;
+	@report-keys-box-border-left: 1px solid @primary;
+	@report-keys-box-border-right: 1px solid @primary;
+	@report-keys-box-border-top: 1px solid @primary;
+	/* Only enter single value as used for single corners */
+	@report-keys-box-border-top-left-radius: 20px;
+	@report-keys-box-border-top-right-radius: 20px;
+	@report-keys-box-border-bottom-right-radius: 20px;
+	@report-keys-box-border-bottom-left-radius: 20px;
+
+	/* --- Quick Filters --- */
+	@quick-reports-header-font-color: @main-font;
+	@quick-reports-header-font-family: @heading-font-family;
+	@quick-reports-header-font-size: @font-size-medium;
+	@quick-reports-header-font-weight: normal;
+	@quick-reports-filter-box-border-bottom: 1px solid @dark-grey-2;
+	@quick-reports-filter-box-border-left: 1px solid @dark-grey-2;
+	@quick-reports-filter-box-border-right: 1px solid @dark-grey-2;
+	@quick-reports-filter-box-border-top: 1px solid @dark-grey-2;
+	/* Only enter single value as used for single corners */
+	@quick-report-filter-box-border-top-left-radius: 0;
+	@quick-report-filter-box-border-top-right-radius: 0;
+	@quick-report-filter-box-border-bottom-right-radius: 0;
+	@quick-report-filter-box-border-bottom-left-radius: 0;
+
+	/* --- Tagging --- */
+
+	/* Tagging icon partial */
+	@tagging-partial-color: @link;
+	@tagging-partial-color-hover: @link-hover;
+	/* Tagging icon off */
+	@tagging-off-color: @link;
+	@tagging-off-color-hover: @link-hover;
+	/* Tagging icon on */
+	@tagging-on-color: @link;
+	@tagging-on-color-hover: @link-hover;
+	/* Tagging icon disabled */
+	@tagging-locked-color: @disabled;
+
+	/* --- Report Participating --- */
+	@tagging-participating-icon-color: @green;
+	@tagging-not-participating-icon-color: @red;
+
+	/* --- Administration --- */
+	@administration-color: @main-color;
+
+	/* --- Shaded Boxes --- */
+	@shaded-background: @hover;
+	@shaded-border-radius: @portlet-section-border-radius; /* Only enter single value as used for single corners */
+
+	/* --- Unshaded Boxes - use inside a shaded box */
+	@unshaded-background: @portlet-background;
+	@unshaded-border-radius: @portlet-section-border-radius; /* Only enter single value as used for single corners */
+
+	@nas-border: @border;
+	@nas-column-border: @border;
+	/* Only enter single value as used for single corners */
+	@nas-column-top-left-radius: @border-radius;
+	@nas-column-top-right-radius: @border-radius;
+	@nas-column-border-bottom-right-radius: @border-radius;
+	@nas-column-border-bottom-left-radius: @border-radius;
+	@nas-column-header-background: @heading-boxed-background;
+	@nas-column-header-font-color: @heading-boxed-font-color;
+	@nas-column-new-font-style: italic;
+	@nas-column-remove-font-color: @light-grey-4;
+
+	/* --- Custom Reports --- */
+	@criteria-border: none;
+	@criteria-border-radius: @border-radius; /* Only enter single value as used for single corners */
+	@criteria-heading-background: @white;
+	@criteria-heading-border-bottom: 3px solid @dark-grey-2;
+	@criteria-heading-color: @main-font;
+	@criteria-heading-font-family: @body-font-family;
+	@criteria-heading-color-font-size: @font-size-small;
+
+	/* --- Favourites */
+	@add-favourite-color: @main-font;
+	@add-favourite-hover-color: @main-color;
+	@remove-favourite-color: @add-favourite-hover-color;
+	@remove-favourite-hover-color: @add-favourite-color;
+
+
+	/* --- Notification Messages --- */
+	@sk-report-notification-title-font-color: @main-font;
+	@sk-report-notification-title-font-family: @body-font-family;
+	@sk-report-notification-title-font-size: @font-size-medium;
+	@sk-report-notification-title-font-weight: normal;
+	@sk-report-notification-title-line-height: @line-height;
+
+	@sk-report-notification-text-font-family: @body-font-family;
+	@sk-report-notification-text-line-height: @line-height;
+	@sk-report-notification-text-font-size: @font-size-medium;
+	@sk-report-notification-text-font-weight: normal;
+
+	@sk-report-notification-link-text-decoration: underline;
+	@sk-report-notification-link-line-height: @line-height;
+	@sk-report-notification-link-font-size: @font-size-small;
+	@sk-report-notification-link-font-weight: @body-font-weight;
+	@sk-report-notification-link-color: @link;
+
+	@sk-report-notification-background: @white;
+	@sk-report-notification-box-shadow: 0px 2px 4px rgba(60, 61, 65, 0.2);
+	@sk-report-notification-border: 1px solid @sk-report-notification-font-color;
+	@sk-report-notification-border-radius: @border-radius;
+	@sk-report-notification-font-color: @sk-report-notification-color;
+	@sk-report-notification-padding: 10px;
+	@sk-report-notification-grid-template-columns: @sk-report-notification-icon-font-size auto;
+	@sk-report-notification-gap: 16px;
+	@sk-report-notification-color: @main-font;
+
+	@sk-report-notification-warning-background: @white;
+	@sk-report-notification-warning-box-shadow: @sk-report-notification-box-shadow;
+	@sk-report-notification-warning-border: 1px solid @sk-report-notification-warning-color;
+	@sk-report-notification-warning-border-radius: @sk-report-notification-border-radius;
+	@sk-report-notification-warning-border-top-left-radius: @warning-border-top-left-radius;
+	@sk-report-notification-warning-border-top-right-radius: @warning-border-top-right-radius;
+	@sk-report-notification-warning-border-bottom-right-radius: @warning-border-bottom-right-radius;
+	@sk-report-notification-warning-border-bottom-left-radius: @warning-border-bottom-left-radius;
+	@sk-report-notification-warning-font-color: @sk-report-notification-warning-color;
+	@sk-report-notification-warning-color: @red;
+
+	@sk-report-notification-alert-background: @white;
+	@sk-report-notification-alert-box-shadow: @sk-report-notification-box-shadow;
+	@sk-report-notification-alert-border: 1px solid @sk-report-notification-alert-color;
+	@sk-report-notification-alert-border-radius: @sk-report-notification-border-radius;
+	@sk-report-notification-alert-border-top-left-radius: @warning-border-top-left-radius;
+	@sk-report-notification-alert-border-top-right-radius: @warning-border-top-right-radius;
+	@sk-report-notification-alert-border-bottom-right-radius: @warning-border-bottom-right-radius;
+	@sk-report-notification-alert-border-bottom-left-radius: @warning-border-bottom-left-radius;
+	@sk-report-notification-alert-font-color: @sk-report-notification-alert-color;
+	@sk-report-notification-alert-color: @warning-orange;
+
+	@sk-report-notification-info-background: @white;
+	@sk-report-notification-info-box-shadow: @sk-report-notification-box-shadow;
+	@sk-report-notification-info-border: 1px solid @sk-report-notification-info-color;
+	@sk-report-notification-info-border-radius: @sk-report-notification-border-radius;
+	@sk-report-notification-info-border-top-left-radius: @general-border-top-left-radius;
+	@sk-report-notification-info-border-top-right-radius: @general-border-top-right-radius;
+	@sk-report-notification-info-border-bottom-right-radius: @general-border-bottom-right-radius;
+	@sk-report-notification-info-border-bottom-left-radius: @general-border-bottom-left-radius;
+	@sk-report-notification-info-font-color: @main-font;
+	@sk-report-notification-info-color: @sk-report-notification-color;
+
+	@sk-report-notification-icon-container-margin: 5px 0;
+	@sk-report-notification-icon-container-height: @font-size-medium;
+	@sk-report-notification-icon-font-size: @font-size-large;
+	@sk-report-notification-icon-height: @font-size-large;
+	@sk-report-notification-margin: @sk-report-notification-icon-container-margin;
+	@sk-report-notification-line-height: @sk-report-notification-text-line-height;
+
+	/*--- Reports Wizard ---*/
+	@cti-reports-wizard-background: transparent;
+	@cti-reports-wizard-box-shadow: none;
+
+
+/*-- 24 - Back Office Variables --------------------------------------------------------------------------------*/
+
+	/* --- Profile Features --- */
+	@profile-feature-background: @portlet-background;
+	@profile-feature-border: 1px solid @main-font;
+	@profile-feature-border-radius: @border-radius; /* Only enter single value as used for single corners */
+	@profile-feature-icon-color: @main-color;
+	@profile-feature-type-background-header: @heading-boxed-background;
+	@profile-feature-type-header-font-color: @heading-boxed-font-color;
+	@profile-feature-hover-background: @hover;
+	@profile-feature-hover-font-color: @dark-close-icons;
+
+/*-- 25 - Manage Rules Variables --------------------------------------------------------------------------------*/
+
+	@manage-rules-background: @portlet-background;
+	@manage-rules-border-bottom: @border;
+	@manage-rules-border-left: @border;
+	@manage-rules-border-right: @border;
+	@manage-rules-border-top: @border;
+	@manage-rules-border-radius: @border-radius; /* Only enter single value as used for single corners */
+	@manage-rules-accordion-header-background: @heading-boxed-background;
+	@manage-rules-accordion-header-font-color: @heading-boxed-font-color;
+	@manage-rules-accordion-header-font-size: @font-size-medium;
+	@manage-rules-accordion-header-font-weight: normal;
+
+	/* Priorities list that is draggable */
+	@manage-rules-priorities-background: @portlet-background;
+	@manage-rules-priorities-background-hover: @hover;
+	@manage-rules-priorities-border: @border;
+	@manage-rules-priorities-border-radius: @border-radius; /* Only enter single value as used for single corners */
+	@manage-rules-icon-color: @main-color;
+
+	/* View Rules - List of what applies to the rules */
+	@manage-rules-list-rules-header: @heading-font-color;
+
+/*-- 27 - Unbilled (Real Time) Variables -----------------------------------------------------------------------------------*/
+
+	/* --- General --- */
+	@real-time-wrapper-border-top: none; /* Adds a border to the wrapper if needed as portlet has not title */
+
+	/* --- Summary --- */
+	@real-time-border-bottom: none;
+	@real-time-border-left: none;
+	@real-time-border-right: none;
+	@real-time-border-top: none;
+	@real-time-border-seperator: 1px solid @light-grey-4;
+
+	/* --- Font --- */
+	@real-time-main-title-font-color: @heading;
+	@real-time-main-title-font-weight: bold;
+	@real-time-title-font-color: @main-font;
+	@real-time-title-font-weight: normal;
+	@real-time-value-font-color: @main-font;
+	@real-time-value-font-weight: normal;
+
+	/* --- No Data Message --- */
+	@real-time-no-data-font-color: @heading;
+	@real-time-no-data-font-family: @heading-font-family;
+	@real-time-no-data-font-size: @font-size-large;
+	@real-time-no-data-font-weight: normal;
+
+	/* --- Headline Summary Footer / Message --- */
+	@real-time-summary-footer-border-bottom: none;
+	@real-time-summary-footer-border-left: none;
+	@real-time-summary-footer-border-right: none;
+	@real-time-summary-footer-border-top: 1px solid @light-grey-4;
+
+	/* --- Data Message --- */
+	@real-time-data-message-font-color: @green;
+	@real-time-data-message-font-size: @font-size-small;
+	@real-time-data-message-font-weight: normal;
+
+	/* --- My Alerts --- */
+	@my-alerts-border-bottom: 2px solid @light-grey-4;
+	@my-alerts-border-left: 2px solid @light-grey-4;
+	@my-alerts-border-right: 2px solid @light-grey-4;
+	@my-alerts-border-top: 2px solid @light-grey-4;
+	@my-alert-create-alert-border-width: 1px; /* Width only */
+	/* Only enter single value as used for single corners */
+	@my-alerts-border-top-left-radius: @border-radius;
+	@my-alerts-border-top-right-radius: @border-radius;
+	@my-alerts-border-bottom-right-radius: @border-radius;
+	@my-alerts-border-bottom-left-radius: @border-radius;
+
+	/* Disabled */
+	@my-alert-disabled-border-color: @disabled; /* Color only */
+	@my-alert-disabled-font-color:  @disabled;
+
+
+	/* Create Alerts */
+	@create-alert-circle-background: @dark-grey-3;
+	@create-alert-circle-font-color: @white;
+	@create-alert-box-fill: #F9F9F9;
+	/* Only enter single value as used for single corners */
+	@create-alert-border-top-left-radius: @border-radius;
+	@create-alert-border-top-right-radius: @border-radius;
+	@create-alert-border-bottom-right-radius: @border-radius;
+	@create-alert-border-bottom-left-radius: @border-radius;
+
+	/* Display Alerts */
+	@alert-name-font-color: @main-color;
+	@alert-name-font-size: @font-size-small;
+	@alert-name-font-weight: bold;
+	@alert-trigger-value-font-color: @main-font;
+	@alert-trigger-value-font-size: @font-size-medium;
+	@alert-trigger-value-font-weight: normal;
+	@alert-trigger-property-value-font-color: @main-font;
+	@alert-trigger-property-value-font-size: @font-size-small;
+	@alert-trigger-property-value-font-weight: normal;
+	@alert-base-property-value-font-color: @main-font;
+	@alert-base-property-value-font-size: @font-size-small;
+	@alert-base-property-value-font-weight: bold;
+	@alert-base-trigger-font-color: @main-font;
+	@alert-base-trigger-font-size: @font-size-small;
+	@alert-base-trigger-font-weight: normal;
+	@alert-base-scope-font-color: @main-font;
+	@alert-base-scope-font-size: @font-size-small;
+	@alert-base-scope-font-weight: normal;
+
+	/* --- Picker --- */
+	@picker-background: @portlet-background;
+	@picker-border-color: @light-grey-6;
+	@picker-border-bottom: 1px solid @picker-border-color;
+	@picker-border-left: 1px solid @picker-border-color;
+	@picker-border-right: 1px solid @picker-border-color;
+	@picker-border-top: 1px solid @picker-border-color;
+	@picker-drop-up-border-top: 7px solid @picker-border-color;
+	@picker-input-arrow-border-bottom: 7px solid @picker-border-color;
+	@picker-font-color: @main-font;
+	@picker-link-font-color: @main-font;
+	@picker-link-font-color-hover: @main-font;
+	@picker-time-background: @body-background;
+
+	@picker-range-active-color: @main-color;
+	@picker-range-hover-font-color: @main-color;
+	@picker-range-item-hover: @hover;
+	@picker-range-item-focus-color: @header-item-font-focus-color;
+	@picker-range-item-font-color-hover: @main-font;
+	@picker-dates-in-range-font-color: @main-color;
+	@picker-dates-in-range-background-color: @light-blue;
+
+	@picker-date-item-selected-background-color: @main-color;
+	@picker-date-item-hover: @inform-blue-light-1;
+	@picker-date-item-selected-font-color: @white;
+	@picker-date-item-disabled: @disabled;
+	@picker-time-item-disabled: @disabled;
+
+	/* Only enter single value as used for single corners */
+	@picker-border-top-left-radius: @border-radius;
+	@picker-border-top-right-radius: @border-radius;
+	@picker-border-bottom-right-radius: @border-radius;
+	@picker-border-bottom-left-radius: @border-radius;
+
+/*-- 28 - Forgotten Password -----------------------------------------------------------------------------------*/
+	@password-background-color: none;
+	@password-border-bottom: none;
+	@password-border-left: none;
+	@password-border-right: none;
+	@password-border-top: none;
+	@password-font-size: @font-size-small;
+	@password-font-weight: @body-font-weight;
+	@password-padding: 0;
+
+/*-- 29 - Message Centre -----------------------------------------------------------------------------------*/
+	@message-centre-highlight-colour: @tour; /* Colour used to highlight the message centre with unread messages */
+	@messagecentre-font-color: @white;
+	@sk-template-message-centre-additional-items-option-button-text-transform: @menu-item-text-transform;
+	@sk-template-message-centre-additional-items-option-button-font-size: @radio-button-font-size;
+
+/*-- 30 - Notification / Insights SideBar --------------------------------------------------------------------------------*/
+
+	/* 30.1 - Bootstrap Notify - Top Nav  */
+	@notifications-popup-background-hover: @hover;
+	@notifications-popup-target-text-decoration: @link-text-decoration;
+	@notifications-popup-target-hover-text-decoration: @notifications-popup-target-text-decoration;
+	@notifications-popup-target-link-font-color: @main-font;
+	@notifications-popup-target-link-text-decoration: underline;
+	@notifications-popup-title-font: @main-font;
+	@notifications-popup-title-font-family: @body-font-family;
+	@notifications-popup-title-font-weight: 700;
+	@notifications-close-icon-color: @close-icon-color;
+	@notifications-close-icon-size-small: @icon-size-small;
+
+	@notifications-popup-warning-background: @white;
+	@notifications-popup-warning-border: 2px solid @warning-orange;
+	@notifications-popup-warning-font-color: @main-font;
+
+	@notifications-popup-danger-background: @white;
+	@notifications-popup-danger-border: 2px solid @error-red;
+	@notifications-popup-danger-font-color: @main-font;
+
+	@notifications-popup-success-background: @white;
+	@notifications-popup-success-border: 2px solid @success-green;
+	@notifications-popup-success-font-color: @main-font;
+
+	@notifications-popup-info-background: @white;
+	@notifications-popup-info-border: 2px solid @inform-blue;
+	@notifications-popup-info-font-color: @main-font;
+
+	/* 30.2 - SideBar - Main Content  */
+	@sidebar-background-color: @overview-list-background;
+	@sidebar-border: 1px solid @dark-grey-2;
+	@sidebar-border-top-left-radius: @border-radius;
+	@sidebar-border-top-right-radius: 0;
+	@sidebar-border-bottom-right-radius: @border-radius;
+	@sidebar-border-bottom-left-radius: @border-radius;
+	@sidebar-border-drop-shadow: 3px 3px 6px @dark-grey-2;
+	@sidebar-heading-background-color: @main-color;
+	@sidebar-heading-font-color: @white;
+	@sidebar-heading-font-size: @font-size-large;
+
+	@notifications-sidebar-heading-background-color : @sidebar-heading-background-color;
+	@notifications-sidebar-heading-font-color: @sidebar-heading-font-color;
+	@notifications-sidebar-heading-font-size : @sidebar-heading-font-size;
+
+	/* 30.3 - SideBar - Status Boxes */
+	@notifications-sidebar-staus-count-background-color: @message-centre-highlight-colour;
+	@notifications-sidebar-staus-count-font-color: @messagecentre-font-color;
+	@notifications-sidebar-staus-count-font-size: @font-size-small;
+	@notifications-sidebar-staus-count-font-weight: normal;
+
+	/* 30.4 - SideBar - Group Heading */
+	@notifications-sidebar-group-heading-border-top: @overview-list-background-header 1px solid;
+	@notifications-sidebar-group-heading-border-bottom: @overview-list-background-header 1px solid;
+	@notifications-sidebar-group-heading-border-left: none;
+	@notifications-sidebar-group-heading-border-right: none;
+	@notifications-sidebar-group-heading-font-color: @main-color;
+	@notifications-sidebar-group-heading-font-size: @heading-h3-font-size;
+	@notifications-sidebar-group-heading-icon-font-color: @notifications-sidebar-group-heading-font-color;
+	@notifications-sidebar-group-heading-icon-font-size: @icon-size-medium;
+	@notifications-sidebar-group-heading-dropdown-menu-font-color: @body-font-color;
+	@notifications-sidebar-group-heading-dropdown-menu-font-size: @font-size-small;
+	@notifications-sidebar-group-heading-sort-icon-font-size: @font-size-small;
+	@notifications-sidebar-group-heading-options-icon-font-size: @font-size-small;
+	@notifications-sidebar-group-heading-count-background-color: @sidebar-heading-background-color;
+	@notifications-sidebar-group-heading-count-font-color: @sidebar-heading-font-color;
+	@notifications-sidebar-group-heading-count-font-weight: bold;
+	@notifications-sidebar-group-heading-count-font-size: @text-formatting-font-size;
+	@notifications-sidebar-group-heading-count-line-height: @text-formatting-line-height;
+
+
+	/* 30.5 - SideBar - Items */
+	@notifications-sidebar-item-font-color: @body-font-color;
+	@notifications-sidebar-item-link-font-color: @primary;
+	@notifications-sidebar-item-link-text-decoration: underline;
+	@notifications-sidebar-item-background-color: @light-blue;
+	@notifications-sidebar-item-border-color: transparent;
+	@notifications-sidebar-item-border-bottom: 1px solid @light-grey-4;
+	@notifications-sidebar-item-hover-background-color: @hover;
+	@notifications-sidebar-item-read-background-color: @white;
+	@notifications-sidebar-item-dismissed-background-color: @notifications-sidebar-item-read-background-color;
+	@notifications-sidebar-item-default-icon-background-color: @dark-grey-2;
+	@notifications-sidebar-item-success-icon-background-color: @green;
+	@notifications-sidebar-item-warning-icon-background-color: @red;
+	@notifications-sidebar-item-highlight-icon-background-color: @blue;
+	@notifications-sidebar-item-load-more-font-weight: bold;
+	@notifications-sidebar-item-load-more-font-size: @text-formatting-font-size;
+	@notifications-sidebar-item-load-more-line-height: @text-formatting-line-height;
+
+	@myfavourites-sidebar-item-font-color : @header-item-font-color;
+	@myfavourites-sidebar-item-line-height : @header-item-line-height;
+	@myfavourites-sidebar-item-font-size : @header-item-font-size;
+	@myfavourites-sidebar-item-background-hover-color: @header-item-background-hover-color;
+	@myfavourites-sidebar-item-font-color-hover: @header-item-font-color-hover;
+	@myfavourites-sidebar-dropdown-item-icon-size : @header-dropdown-item-icon-size;
+
+	/* 30.6 - SideBar - Action DropDown */
+	@sidebar-action-icon-font-color: @body-font-color;
+	@sidebar-action-icon-font-size: @font-size-small;
+
+	/*-- 31 - Bootstrap panels for navigation --------------------------------------------------------------------------------------*/
+	@panelnav-header-subtext-font-color: @body-font-color;
+	@panelnav-header-subtext-font-size: @body-font-size;
+	@panelnav-header-subtext-font-family: @body-font-family;
+	@panelnav-header-subtext-font-weight: @body-font-weight;
+	@panelnav-header-subtext-line-height: @body-line-height;
+
+	@panelnav-header-welcome-heading-font-color: @black;
+	@panelnav-header-welcome-heading-font-size: @heading-h1-font-size;
+	@panelnav-header-welcome-heading-font-family: @heading-h1-font-family;
+	@panelnav-header-welcome-heading-font-weight: @heading-h1-font-weight;
+	@panelnav-header-welcome-heading-line-height: @heading-h1-line-height;
+	@panelnav-header-welcome-heading-text-transform: uppercase;
+
+	@panelnav-header-welcome-message-content-font-color: @heading-h3-font-color;
+	@panelnav-header-welcome-message-content-font-size: @heading-h3-font-size;
+	@panelnav-header-welcome-message-content-font-family: @body-font-family;
+	@panelnav-header-welcome-message-content-font-weight: @body-font-weight;
+	@panelnav-header-welcome-message-content-line-height: @heading-h3-line-height;
+
+	@panelnav-header-background:  @white;
+	@panelnav-heading-font-color: @black;
+	@panelnav-heading-font-size: @heading-h2-font-size;
+	@panelnav-heading-font-family: @heading-h2-font-family;
+	@panelnav-heading-font-weight: @heading-h2-font-weight;
+	@panelnav-heading-line-height: @heading-h2-line-height;
+	@panelnav-panel-background: @white;
+	@panelnav-panel-header-background: @primary;
+	@panelnav-panel-body-background: transparent;
+	@panelnav-panel-button-group-background-color: transparent;
+	@panelnav-panel-button-background-color: @light-grey-3;
+	@panelnav-panel-button-text-color: @dark-grey-4;
+	@panelnav-button-font-size: @radio-button-font-size;
+	@panelnav-button-font-family: @body-font-family;
+	@panelnav-button-font-weight: @body-font-weight;
+	@panelnav-button-line-height: @body-line-height;
+	@panelnav-button-border: @panelnav-button-border-size @panelnav-button-border-type @panelnav-button-border-color;
+	@panelnav-button-border-type: solid;
+	@panelnav-button-border-size: 1px;
+	@panelnav-button-border-color: @radio-button-border-color;
+	@panelnav-button-border-radius: 12px;
+	@panelnav-panel-button-hover-background-color: @blue;
+	@panelnav-panel-button-hover-text-color: @white;
+	@panelnav-icon-font-color: @primary;
+	@panelnav-icon-font-size: 64px;
+	@panelnav-panel-padding: 16px;
+	@panelnav-panel-header-padding: 0px;
+	@panelnav-panel-body-padding: 0px;
+	@panelnav-panel-size: 320px;
+
+	@panelnav-panel-button-text-color-hover: @white;
+	@panelnav-panel-button-background-color-hover: @primary;
+	@panelnav-boxshadow-lower: rgba(0, 0, 0, 0.2);
+	@panelnav-boxshadow-upper: rgba(0, 0, 0, 0.19);
+
+	/*-- 32 - Uploads */
+	@upload-progress-color: @light-grey-2;
+	@upload-progress-bar-color: @white;
+	@upload-progress-bar-background-color: @primary;
+	@upload-progress-bar-success: @green;
+	@upload-progress-bar-warning: @warning-orange;
+	@upload-progress-bar-danger: @red;
+	@upload-dropzone-border: 2px dashed @dark-grey-2;
+	@upload-dropzone-border-top-left-radius: @border-radius;
+	@upload-dropzone-border-top-right-radius: @border-radius;
+	@upload-dropzone-border-bottom-right-radius: @border-radius;
+	@upload-dropzone-border-bottom-left-radius: @border-radius;
+	@upload-dropzone-border-drop-shadow: none;
+
+	@upload-file-preview-border-top: none;
+	@upload-file-preview-border-bottom: 1px solid @dark-grey-2;
+	@upload-file-preview-border-left: none;
+	@upload-file-preview-border-right: none;
+
+	@upload-file-preview-border-top-left-radius: 0;
+	@upload-file-preview-border-top-right-radius: 0;
+	@upload-file-preview-border-bottom-right-radius: 0;
+	@upload-file-preview-border-bottom-left-radius: 0;
+	@upload-file-preview-border-drop-shadow: none;
+
+	@upload-folder-name-info-font-size: @font-size-small;
+	@upload-folder-name-info-font-weight: normal;
+
+	/*-- 33 Downloads */
+	@download-breadcrumb-font-size: @font-size-medium;
+
+	/*-- 34 Templates (including marketing) */
+	@sk-template-content-font-size: @body-font-size;
+	@sk-template-content-line-height: @body-line-height;
+
+	@sk-template-image-source-button-text-transform: @menu-item-text-transform;
+	@sk-template-image-source-button-font-size: @radio-button-font-size;
+	@sk-template-image-gallery-border: 1px solid @dark-grey-2;
+	@sk-template-image-gallery-thumb-img-border: 1px solid @dark-grey-2;
+	@sk-template-image-gallery-thumb-img-border-radius: @border-radius;
+	@sk-template-image-gallery-thumb-img-hover-box-shadow: 0px 2px 4px @light-grey-4;
+	@sk-template-image-gallery-thumb-img-selected-box-shadow: 0px 2px 4px @dark-grey-4;
+	@sk-template-image-gallery-delete-box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.75);
+	@sk-template-image-gallery-delete-box-shadow-hover: inset 0 0 200px rgba(255, 255, 255, 0.9);
+
+	@sk-template-notification-title-font: @main-font;
+	@sk-template-notification-title-font-family: @body-font-family;
+	@sk-template-notification-title-font-size: @font-size-medium;
+	@sk-template-notification-title-font-weight: bold;
+
+	@sk-template-notification-text-font-family: @body-font-family;
+	@sk-template-notification-text-line-height: @line-height;
+	@sk-template-notification-text-font-size: @font-size-medium;
+	@sk-template-notification-text-font-weight: bold;
+
+	@sk-template-notification-link-text-decoration: underline;
+	@sk-template-notification-link-line-height: @line-height;
+	@sk-template-notification-link-font-size: @font-size-small;
+	@sk-template-notification-link-font-weight: @body-font-weight;
+	@sk-template-notification-link-color: @link;
+
+	@sk-template-notification-background: @white;
+	@sk-template-notification-box-shadow: @box-shadow;
+	@sk-template-notification-border: 1px solid @sk-template-notification-font-color;
+	@sk-template-notification-border-radius: @border-radius;
+	@sk-template-notification-font-color: @sk-template-notification-color;
+	@sk-template-notification-padding: 1em;
+	@sk-template-notification-grid-template-columns: @sk-template-notification-icon-font-size auto;
+	@sk-template-notification-gap: 12px;
+	@sk-template-notification-color: @main-font;
+
+	@sk-template-notification-warning-background: @white;
+	@sk-template-notification-warning-box-shadow: @box-shadow;
+	@sk-template-notification-warning-border: 1px solid @sk-template-notification-warning-color;
+	@sk-template-notification-warning-border-radius: @border-radius;
+	@sk-template-notification-warning-border-top-left-radius: @warning-border-top-left-radius;
+	@sk-template-notification-warning-border-top-right-radius: @warning-border-top-right-radius;
+	@sk-template-notification-warning-border-bottom-right-radius: @warning-border-bottom-right-radius;
+	@sk-template-notification-warning-border-bottom-left-radius: @warning-border-bottom-left-radius;
+	@sk-template-notification-warning-font-color: @main-font;
+	@sk-template-notification-warning-color: @red;
+
+	@sk-template-notification-alert-background: @white;
+	@sk-template-notification-alert-box-shadow: @box-shadow;
+	@sk-template-notification-alert-border: 1px solid @sk-template-notification-alert-color;
+	@sk-template-notification-alert-border-radius: @border-radius;
+	@sk-template-notification-alert-border-top-left-radius: @warning-border-top-left-radius;
+	@sk-template-notification-alert-border-top-right-radius: @warning-border-top-right-radius;
+	@sk-template-notification-alert-border-bottom-right-radius: @warning-border-bottom-right-radius;
+	@sk-template-notification-alert-border-bottom-left-radius: @warning-border-bottom-left-radius;
+	@sk-template-notification-alert-font-color: @main-font;
+	@sk-template-notification-alert-color: @yellow;
+
+	@sk-template-notification-info-background: @white;
+	@sk-template-notification-info-box-shadow: @box-shadow;
+	@sk-template-notification-info-border: 1px solid @sk-template-notification-info-color;
+	@sk-template-notification-info-border-radius: @border-radius;
+	@sk-template-notification-info-border-top-left-radius: @general-border-top-left-radius;
+	@sk-template-notification-info-border-top-right-radius: @general-border-top-right-radius;
+	@sk-template-notification-info-border-bottom-right-radius: @general-border-bottom-right-radius;
+	@sk-template-notification-info-border-bottom-left-radius: @general-border-bottom-left-radius;
+	@sk-template-notification-info-font-color: @main-font;
+	@sk-template-notification-info-color: @sk-template-notification-color;
+
+	@sk-template-notification-icon-container-margin: 11px 0;
+	@sk-template-notification-icon-container-height: @font-size-medium;
+	@sk-template-notification-icon-font-size: @sk-template-notification-text-font-size;
+	@sk-template-notification-icon-height: @sk-template-notification-text-font-size;
+	@sk-template-notification-margin: @sk-template-notification-icon-container-margin;
+	@sk-template-notification-line-height: @sk-template-notification-text-line-height;
+
+	/* --- Promo Banners --- */
+	@sk-template-promoBanner-background: @white;
+	@sk-template-promoBanner-box-shadow: 0 1px 4px -2px rgb(12 12 13 / 10%);
+	@sk-template-promoBanner-border: 1px solid @sk-template-notification-font-color;
+	@sk-template-promoBanner-border-radius: @border-radius;
+	@sk-template-promoBanner-font-color: @sk-template-notification-color;
+	@sk-template-promoBanner-padding-unit: 1.5em;
+	@sk-template-promoBanner-padding-top: @sk-template-promoBanner-padding-unit;
+	@sk-template-promoBanner-padding-right: @sk-template-promoBanner-padding-unit;
+	@sk-template-promoBanner-padding-bottom: @sk-template-promoBanner-padding-unit;
+	@sk-template-promoBanner-padding-left: @sk-template-promoBanner-padding-unit;
+	@sk-template-promoBanner-padding: @sk-template-promoBanner-padding-top @sk-template-promoBanner-padding-right @sk-template-promoBanner-padding-bottom @sk-template-promoBanner-padding-left;
+	@sk-template-promoBanner-detials-gap: 24px;
+	@sk-template-promoBanner-text-gap: 10px;
+	@sk-template-promoBanner-max-img: 85px;
+
+	/* --- Title ---- */
+	@sk-template-promoBanner-title-font: @heading-font-color;
+	@sk-template-promoBanner-title-font-family: @body-font-family;
+	@sk-template-promoBanner-title-font-size: @font-size-medium;
+	@sk-template-promoBanner-title-font-weight: bold;
+
+	/* --- Text ---- */
+	@sk-template-promoBanner-text-font: @main-font;
+	@sk-template-promoBanner-text-font-family: @body-font-family;
+	@sk-template-promoBanner-text-line-height: @line-height;
+	@sk-template-promoBanner-text-font-size: @font-size-medium;
+	@sk-template-promoBanner-text-font-weight: bold;
+
+	/* --- Link ---- */
+	@sk-template-promoBanner-link-text-decoration: underline;
+	@sk-template-promoBanner-link-line-height: @line-height;
+	@sk-template-promoBanner-link-font-size: @font-size-small;
+	@sk-template-promoBanner-link-font-weight: @body-font-weight;
+	@sk-template-promoBanner-link-color: @link;
+
+	/* --- Main Buttons --- */
+
+	/* General */
+	@sk-template-promoBanner-btn-height: @btn-height;
+	@sk-template-promoBanner-btn-padding: @btn-padding;
+	@sk-template-promoBanner-btn-font-size: @btn-font-size;
+	@sk-template-promoBanner-btn-font-family: @btn-font-family;
+	@sk-template-promoBanner-btn-font-weight: @btn-font-weight;
+	/* Border Radius - only enter single value as used for single corners */
+	@sk-template-promoBanner-btn-border-top-left-radius: @btn-border-top-left-radius;
+	@sk-template-promoBanner-btn-border-top-right-radius: @btn-border-top-right-radius;
+	@sk-template-promoBanner-btn-border-bottom-right-radius: @btn-border-bottom-right-radius;
+	@sk-template-promoBanner-btn-border-bottom-left-radius: @btn-border-bottom-left-radius;
+
+	/* Normal */
+	@sk-template-promoBanner-btn-background-top: @btn-background-top;
+	@sk-template-promoBanner-btn-background-bottom: @btn-background-bottom;
+	@sk-template-promoBanner-btn-border-bottom: @btn-border-bottom;
+	@sk-template-promoBanner-btn-border-left: @btn-border-left;
+	@sk-template-promoBanner-btn-border-right: @btn-border-right;
+	@sk-template-promoBanner-btn-border-top: @btn-border-top;
+	@sk-template-promoBanner-btn-font-color: @btn-font-color;
+	@sk-template-promoBanner-btn-box-shadow: @btn-box-shadow;
+
+	/* Hover */
+	@sk-template-promoBanner-btn-background-top-hover: @btn-background-top-hover;
+	@sk-template-promoBanner-btn-background-bottom-hover: @btn-background-bottom-hover;
+	@sk-template-promoBanner-btn-border-bottom-hover: @btn-border-bottom-hover;
+	@sk-template-promoBanner-btn-border-left-hover: @btn-border-left-hover;
+	@sk-template-promoBanner-btn-border-right-hover: @btn-border-right-hover;
+	@sk-template-promoBanner-btn-border-top-hover: @btn-border-top-hover;
+	@sk-template-promoBanner-btn-font-color-hover: @btn-font-color-hover;
+	@sk-template-promoBanner-btn-box-shadow-hover: @btn-box-shadow-hover;
+
+	/*-- 35 Carousel */
+	@owl-carousel-controls-background-color: rgba(255, 255, 255, 0.75);
+	@owl-carousel-controls-backdrop-filter: blur(16px) saturate(180%);
+	@owl-carousel-controls-border-radius: @border-radius;
+	@owl-carousel-controls-padding: 8px;
+	@owl-carousel-controls-top: 0%;
+	@owl-carousel-controls-dot-background: transparent;
+	@owl-carousel-controls-dot-background-active: @btn-background-bottom;
+
+	/* --- CTA --- */
+	@sk-template-promoBanner-close-font-color: @link;
+	@sk-template-promoBanner-cta-position: @sk-template-promoBanner-padding-unit*2;
+
+	@sk-template-editor-preview-font-family: @body-font-family;
+	@sk-template-editor-preview-font-weight: bold;
+
+	/* -- 36 Modal Dialogs */
+	@modal-dialog-border-line: 1px solid #CCC;
+	@modal-dialog-header-border-bottom: @modal-dialog-border-line;
+	@modal-dialog-header-padding: 24px;
+	@modal-dialog-footer-border-top: @modal-dialog-border-line;
+	@modal-dialog-modal-content-section-bottom: @modal-dialog-border-line;
+	@modal-dialog-modal-content-section-margin-bottom: 10px;
+	@modal-dialog-modal-content-section-padding-bottom: 10px;
+
+	/* -- Ticketing Modal -- */
+
+	@ticketing-modal-body-background: linear-gradient(0deg, rgba(32, 32, 32, 0.05), rgba(32, 32, 32, 0.05)), @white; 
+	@ticketing-modal-body-padding: 32px; 
+	@ticketing-modal-body-article-background: @white; 
+	@ticketing-modal-body-article-padding: 32px; 
+	@ticketing-modal-body-article-gap: 16px; 
+	@ticketing-modal-body-article-heading-font-weight: @heading-h2-font-weight; 
+	@ticketing-modal-body-article-heading-font-color: @black; 
+	@ticketing-modal-body-article-p-color: @heading-font-color; 
+	
+	@ticketing-modal-body-timeline-milestone-border-width: 1px;
+	@ticketing-modal-body-timeline-milestone-border-style: solid;
+	@ticketing-modal-body-timeline-milestone-border-color: @black;
+	@ticketing-modal-body-timeline-milestone-border-left: @ticketing-modal-body-timeline-milestone-border-width @ticketing-modal-body-timeline-milestone-border-style @ticketing-modal-body-timeline-milestone-border-color;
+	@ticketing-modal-body-timeline-milestone-margin: 0 0 0 20px; 
+	@ticketing-modal-body-timeline-milestone-padding: 0 0 5px 25px; 
+	@ticketing-modal-body-timeline-milestone-border: 3.5px solid @primary; 
+	@ticketing-modal-body-timeline-milestone-background: @white; 
+	@ticketing-modal-body-timeline-milestone-size: 30px;
+	@ticketing-modal-body-timeline-milestone-position: -(@ticketing-modal-body-timeline-milestone-size  / 2) + (@ticketing-modal-body-timeline-milestone-border-width / 2); 
+	@ticketing-modal-body-timeline-end-background-color: @primary;
+	@ticketing-modal-body-timeline-end-color: @white;
+	@ticketing-modal-body-timeline-milestone-is-completed-background-color: @primary;
+	@ticketing-modal-body-timeline-milestone-is-current-background-color: @white;
+	@ticketing-modal-body-timeline-milestone-is-future-background-color: linear-gradient(0deg, rgba(32, 32, 32, 0.20) 0%, rgba(32, 32, 32, 0.20) 100%), @white;
+	@ticketing-modal-body-timeline-action-title-font-color: @heading-font-color;
+	@ticketing-modal-body-timeline-action-title-font-size: 16px;
+	@ticketing-modal-body-timeline-action-title-font-weight: @body-font-weight;
+	@ticketing-modal-body-timeline-action-date-font-size: @font-size-small;
+	@ticketing-modal-body-timeline-action-content-font-size: @font-size-small;
+	@ticketing-modal-body-timeline-action-background-color: @white;
+	@ticketing-modal-body-timeline-action-padding: 12px 10px 12px 20px;
+	@ticketing-modal-body-timeline-action-is-expandable-border: 6px solid @dark-grey-3;
+	@ticketing-modal-body-timeline-action-is-expandable-border-color: transparent transparent transparent @dark-grey-3;
+	@ticketing-modal-body-timeline-action-is-expanded-border-color: @dark-grey-3 transparent transparent transparent;
+	
+	
+	@ticketing-modal-footer-border-top-left-radius: 10px; 
+	@ticketing-modal-footer-border-top-right-radius: 10px; 
+	
+	
+	/* -- 37 Vertical pill - bootstrap */
+	@vertical-pill-navigation-card-background: @sk-wrapper-background;
+	@vertical-pill-navigation-card-header-background: @sk-wrapper-background;
+	@vertical-pill-navigation-item-color: @main-font;
+	@vertical-pill-navigation-active-item-color: #FFF;
+	@vertical-pill-navigation-active-item-border-color: @btn-background-top;
+	@vertical-pill-navigation-active-item-background-color: @btn-background-top;
+	@vertical-pill-navigation-active-hover-item-border-color: @btn-background-top-hover;
+	@vertical-pill-navigation-active-hover-item-background-color: @btn-background-top-hover;
+
+	@vertical-pill-navigation-header-font-weight: bold;
+	@vertical-pill-navigation-header-font-family: @body-font-family;
+	@vertical-pill-navigation-header-font-size: @body-font-size;
+
+	/* -- 38 Manage Services */
+
+	/* --- Option --- */
+	@manage-service-panel-option-background: @white;
+	@manage-service-panel-option-padding: 10px;
+	@manage-service-panel-option-border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+	@manage-service-panel-option-border-left: none;
+	@manage-service-panel-option-border-right: none;
+	@manage-service-panel-option-border-top: none;
+	@manage-service-panel-option-border-radius: 0px;
+	@manage-service-panel-option-font-color: @body-font-color;
+	@manage-service-panel-option-font-family: @body-font-family;
+	@manage-service-panel-option-font-weight: @body-font-weight;
+
+	/* --- Option Saved --- */
+	@manage-service-panel-option-background-saved: @light-blue;
+	@manage-service-panel-option-border-bottom-saved: @manage-service-panel-option-border-bottom;
+	@manage-service-panel-option-border-left-saved: none;
+	@manage-service-panel-option-border-right-saved: none;
+	@manage-service-panel-option-border-top-saved: none;
+	@manage-service-panel-option-border-radius-saved: 0px;
+	@manage-service-panel-option-font-color-saved: @body-font-color;
+	@manage-service-panel-option-font-family-saved: @body-font-family;
+	@manage-service-panel-option-font-weight-saved: @body-font-weight;
+
+	/* --- Accordion --- */
+	@manage-service-panel-accordion-background: @dark-grey-2;
+	@manage-service-panel-accordion-border-bottom: @manage-service-panel-option-border-bottom;
+	@manage-service-panel-accordion-border-left: none;
+	@manage-service-panel-accordion-border-right: none;
+	@manage-service-panel-accordion-border-top: none;
+	@manage-service-panel-accordion-border-radius: 0px;
+	@manage-service-panel-accordion-font-color: @white;
+	@manage-service-panel-accordion-font-family: @heading-font-family;
+	@manage-service-panel-accordion-font-weight: @heading-font-weight;
