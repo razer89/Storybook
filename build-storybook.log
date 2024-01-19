@@ -1,0 +1,19 @@
+
+> incharge-documentation@0.1.0 build-storybook
+> storybook build --output-dir C:\Users\FLORIN~1\AppData\Local\Temp\chromatic--26564-3zMDmAmUl5iq
+
+@storybook/cli v7.6.7
+
+info => Cleaning outputDir: C:\Users\FLORIN~1\AppData\Local\Temp\chromatic--26564-3zMDmAmUl5iq
+Error: Transform failed with 1 error:
+.\.storybook\main.js:1:0: ERROR: Unexpected "<<"
+    at failureErrorWithLog (.\node_modules\esbuild\lib\main.js:1649:15)
+    at .\node_modules\esbuild\lib\main.js:847:29
+    at responseCallbacks.<computed> (.\node_modules\esbuild\lib\main.js:703:9)
+    at handleIncomingPacket (.\node_modules\esbuild\lib\main.js:762:9)
+    at Socket.readFromStdout (.\node_modules\esbuild\lib\main.js:679:7)
+    at Socket.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:376:12)
+    at readableAddChunk (node:internal/streams/readable:349:9)
+    at Readable.push (node:internal/streams/readable:286:10)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:190:23)

@@ -1,0 +1,56 @@
+@import '../master.less';
+
+.color-palette {
+  display: flex;
+  gap: 24px;
+}
+
+.color-category {
+  margin-right: 24px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  align-items: center;
+}
+
+.color-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.color-swatch-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 16px;
+}
+
+.color-swatch {
+  width: 200px;
+  height: 66px;
+  border-radius: 8px;
+  border: none;
+}
+
+.color-info {
+  text-align: center;
+}
+
+.color-name {
+  font-weight: bold;
+  color: #000
+}
+
+.color-value {
+  color: #555;
+  margin-top: 4px;
+}
+
+h2 {
+  font-size: 1.45em;
+  font-family: 'Poppins';
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
+  white-space: nowrap;
+}
