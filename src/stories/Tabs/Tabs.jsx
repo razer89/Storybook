@@ -12,14 +12,13 @@ const Tabs = ({ tabs, activeTab, isVertical, verticalClass }) => {
     <div className={isVertical ? verticalClass : ''}>
       {isVertical ? (
         <div className="d-flex align-items-start">
-          <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+          <div className={`nav flex-column nav-pills ${isVertical ? 'flex-column' : ''}`} id="v-pills-tab" role="tablist">
             {tabs.map((tab) => (
               <button
                 className={`nav-link ${active === tab.id ? 'active' : ''}`}
                 id={`${tab.id}-tab`}
-                data-bs-toggle="pill"
-                data-bs-target={`#${tab.id}`}
-                type="button"
+                data-toggle="pill"
+                href={`#${tab.id}`}
                 role="tab"
                 aria-controls={tab.id}
                 aria-selected={active === tab.id}
@@ -54,9 +53,8 @@ const Tabs = ({ tabs, activeTab, isVertical, verticalClass }) => {
                 <button
                   className={`nav-link ${active === tab.id ? 'active' : ''}`}
                   id={`${tab.id}-tab`}
-                  data-bs-toggle="tab"
-                  data-bs-target={`#${tab.id}`}
-                  type="button"
+                  data-toggle="tab"
+                  href={`#${tab.id}`}
                   role="tab"
                   aria-controls={tab.id}
                   aria-selected={active === tab.id}

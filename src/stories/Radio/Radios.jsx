@@ -5,13 +5,13 @@ const Radio = ({ label, checked, id }) => {
   return (
     <div className="form-check">
       <input
-        className="form-check-radio"
+        className="form-check-input"
         type="radio"
         name="flexRadioDefault"
         id={id}
         checked={checked}
       />
-      <label className="form-radio-label" htmlFor={id}>
+      <label className="form-check-label" htmlFor={id}>
         {label}
       </label>
     </div>

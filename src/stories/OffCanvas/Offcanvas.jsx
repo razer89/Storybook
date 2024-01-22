@@ -6,20 +6,25 @@ const Offcanvas = ({ buttonText, offcanvasId, offcanvasLabel, children }) => (
     <button
       className="btn btn-primary"
       type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target={`#${offcanvasId}`}
-      aria-controls={offcanvasId}
+      data-toggle="modal"
+      data-target={`#${offcanvasId}`}
     >
       {buttonText}
     </button>
 
-    <div className="offcanvas offcanvas-end" tabIndex="-1" id={offcanvasId} aria-labelledby={`${offcanvasId}Label`}>
-      <div className="offcanvas-header">
-        <h5 id={`${offcanvasId}Label`}>{offcanvasLabel}</h5>
-        <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div className="offcanvas-body">
-        {children}
+    <div className="modal fade" id={offcanvasId} tabIndex="-1" role="dialog" aria-labelledby={`${offcanvasId}Label`} aria-hidden="true">
+      <div className="modal-dialog modal-dialog-end" role="document">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id={`${offcanvasId}Label`}>{offcanvasLabel}</h5>
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div className="modal-body">
+            {children}
+          </div>
+        </div>
       </div>
     </div>
   </>

@@ -3,7 +3,7 @@ import './select.less';
 
 const Select = () => {
   return (
-    <select className="form-select" aria-label="Default select example">
+    <select className="custom-select" aria-label="Default select example">
       <option defaultValue>Open this select menu</option>
       <option value="1">One</option>
       <option value="2">Two</option>
