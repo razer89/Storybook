@@ -2,14 +2,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-.btn-close {
+.modal-header .close {
   color: #1c1f21;
-  font-size: 16px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  z-index: 1033;
+  padding: 0;
   opacity: .8;
-  font-weight: 400;
+  padding-bottom: 5px;
+  font-size: 2rem;
 }
 
-.btn-close:hover {
+.modal-header .close:hover {
   opacity: 1;
 }
 
@@ -46,4 +51,19 @@
 .modal-dialog-content {
   background: #FFF;
   padding: 32px;
+}
+
+.modal-footer .btn.btn-secondary {
+  color: #003594;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: @btn-padding;
+  font-family: 'Poppins';
+  font-size: @font-size-small;
+  font-weight: 400;
+  border: 1px solid @btn-border-color;
+}
+
+.modal-footer .btn.btn-secondary:hover{
+  background-color: #F4F5F6;
 }

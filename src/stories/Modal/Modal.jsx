@@ -1,28 +1,33 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import './modal.less';
 
 
 const BootstrapModal = ({ show, handleClose, children }) => {
   return (
     <Modal show={show} onHide={handleClose} centered>
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title>Modal Title</Modal.Title>
+        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </Modal.Header>
-      <Modal.Body> <div className="modal-dialog-content">
-          {children}
-        </div></Modal.Body>
+      <Modal.Body>
+        <div className="modal-dialog-content">{children}</div>
+      </Modal.Body>
       <Modal.Footer>
-      <button
+        <button
           type="button"
-          className="storybook-button storybook-button--secondary" onClick={handleClose}>
+          className="btn btn-secondary"
+          onClick={handleClose}
+        >
           Close
         </button>
         <div style={{ width: '5px' }} />
-        <button
-        type="button"
-        className="storybook-button storybook-button--primary">Save</button>
+        <button type="button" className="btn btn-primary">
+          Save
+        </button>
       </Modal.Footer>
     </Modal>
   );

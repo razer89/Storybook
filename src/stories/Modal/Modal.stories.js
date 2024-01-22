@@ -1,7 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from 'react';
 import Modal from './Modal';
-import { Button } from 'react-bootstrap';
 
 export default {
     title: 'Components/Modals',
@@ -24,7 +22,7 @@ export default {
         {/* Button trigger modal */}
         <button
           type="button"
-          className="storybook-button storybook-button--primary"
+          className="btn btn-primary"
           onClick={() => {
             setShowModal(true);
           }}
