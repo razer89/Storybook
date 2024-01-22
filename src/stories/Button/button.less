@@ -13,7 +13,7 @@
   transition: background-color 0.3s ease;
 }
 
-.storybook-button:hover {
+#storybook-root .btn.btn-primary:hover {
   background-color: #00153B;
   /* Change to the desired hover color */
 }
@@ -24,7 +24,7 @@
   cursor: not-allowed;
 }
 
-.storybook-button--primary {
+#storybook-root .btn.btn-primary {
   color: @white;
   background-color: @main-color;
   border-radius: 4px;
@@ -35,18 +35,18 @@
   border: 1px solid @btn-border-color;
 }
 
-.storybook-button--primary:disabled {
+#storybook-root .btn.btn-primary:disabled {
   background-color: @light-grey-2;
   border: 1px solid @light-grey-4;
   color: @dark-grey-2;
 }
 
-.storybook-button--primary:focus-visible {
+#storybook-root .btn.btn-primary:focus-visible {
   outline: solid 2px @dark-grey-4;
   border-color: @light-grey-4;
 }
 
-.storybook-button--secondary {
+#storybook-root .btn.btn-secondary {
   color: #003594;
   background-color: transparent;
   border-radius: 4px;
@@ -57,22 +57,22 @@
   border: 1px solid @btn-border-color;
 }
 
-.storybook-button--secondary:hover {
+#storybook-root .btn.btn-secondary:hover {
   background-color: #F4F5F6;
 }
 
-.storybook-button--secondary:focus-visible {
+#storybook-root .btn.btn-secondary:focus-visible {
   outline: solid 2px #393F41;
   border-color: #C8CDD0;
 }
 
-.storybook-button--secondary:disabled {
+#storybook-root .btn.btn-secondary:disabled {
   background-color: #F4F5F6;
   border: 1px solid #C8CDD0;
   color: #687378;
 }
 
-.btn.btn-secondary.dropdown-toggle {
+#storybook-root .btn.btn-secondary.dropdown-toggle {
   color: #1c1f21;
   background-color: #FFF;
   border-radius: 4px;
@@ -83,12 +83,12 @@
   border: 1px solid #687378;
 }
 
-.btn.btn-secondary.dropdown-toggle:focus-visible {
+#storybook-root .btn.btn-secondary.dropdown-toggle:focus-visible {
   outline: solid 2px #393F41;
   border-color: #C8CDD0;
 }
 
-.btn.btn-link {
+#storybook-root .btn.btn-link {
   color: #003594;
   background-color: transparent;
   cursor: pointer;
@@ -98,14 +98,14 @@
   text-decoration: none;
 }
 
-.btn.btn-link:hover {
+#storybook-root .btn.btn-link:hover {
   text-decoration: underline;
   outline: 0;
   cursor: pointer;
   color: #003594;
 }
 
-.storybook-button--small {
+#storybook-root .btn.btn-secondary.btn-sm {
   font-size: 13px;
   padding: 4px 10px;
 }
@@ -115,7 +115,7 @@
   padding: 11px 20px;
 }
 
-.storybook-button--large {
+#storybook-root .btn.btn-secondary.btn-lg {
   font-size: @font-size-small;
   padding: 8px 22px;
 }
