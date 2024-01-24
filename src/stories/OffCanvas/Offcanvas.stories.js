@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Offcanvas from './Offcanvas';
 
 export default {
-    title: 'Components/Offcanvas',
+    title: '<<Under Progress>>/Offcanvas',
     component: Offcanvas,
     tags: ['autodocs'],
     parameters: {
