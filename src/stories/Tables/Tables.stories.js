@@ -68,3 +68,19 @@ export const BasicTable = () => (
     </table>
   </div>
 );
+
+
+BasicTable.parameters = {
+  docs: {
+    source: {
+      code: `
+      <div class="table-responsive">
+        <table class="table">
+           ...
+        </table>
+      </div>
+
+      `,
+    },
+  },
+};

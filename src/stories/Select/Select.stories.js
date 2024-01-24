@@ -10,12 +10,15 @@ export default {
       source: {
         code: `
           // Your HTML markup for the select component
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>One</option>
+              <option>Two</option>
+              <option>Three</option>
+            </select>
+        </div>
+      
         `,
       },
     },

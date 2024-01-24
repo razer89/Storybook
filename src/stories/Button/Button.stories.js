@@ -83,19 +83,7 @@ Primary.parameters = {
   docs: {
     source: {
       code: `
-      <button type="button" class="btn btn-primary">Primary Button</button>
-
-      // Your CSS styles for the primary button component
-        .btn-primary {
-        color: #fff;
-        background-color: #003594;
-        border-radius: 4px;
-        padding: 8px 24px;
-        font-family: 'Poppins';
-        font-size: 16px;
-        font-weight: 400;
-        border: 1px solid #003594;
-      }
+      <button type="button" class="btn btn-primary">Primary</button>
       `,
     },
   },
@@ -166,18 +154,6 @@ Secondary.parameters = {
     source: {
       code: `
       <button type="button" class="btn btn-secondary">Secondary Button</button>
-
-      // Your CSS styles for the secondary button component
-        .btn-secondary {
-        color: #003594;
-        background-color: transparent;
-        border-radius: 4px;
-        padding: 8px 24px;
-        font-family: 'Poppins';
-        font-size: 16px;
-        font-weight: 400;
-        border: 1px solid #003594;
-      }
       `,
     },
   },
@@ -246,19 +222,16 @@ Dropdown.parameters = {
   docs: {
     source: {
       code: `
-      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown Button</button>
-
-      // Your CSS styles for the dropdown button component
-        .btn.dropdown-toggle {
-        color: #1c1f21;
-        background-color: #FFF;
-        border-radius: 4px;
-        padding: 8px 24px;
-        font-family: 'Poppins';
-        font-size: 16px;
-        font-weight: 400;
-        border: 1px solid #687378;
-      }
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+           <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
       `,
     },
   },
@@ -277,25 +250,7 @@ LinkButton.parameters = {
   docs: {
     source: {
       code: `
-      <button type="button" class="btn btn-link">Link Button</button>
-
-      // Your CSS styles for the link button component
-      .btn.btn-link {
-        color: #003594;
-        background-color: transparent;
-        cursor: pointer;
-        font-family: 'Poppins';
-        font-size: 16px;
-        font-weight: 400;
-        text-decoration: none;
-      }
-      
-      .btn.btn-link:hover {
-        text-decoration: underline;
-        outline: 0;
-        cursor: pointer;
-        color:#003594;
-      }
+      <a class="btn btn-primary" href="#" role="button">Link</a>
       `,
     },
   },
@@ -313,13 +268,7 @@ Large.parameters = {
   docs: {
     source: {
       code: `
-      <button type="button" class="btn btn-secondary">Large Button</button>
-
-      // Your CSS styles for the large button component
-        .btn-secondary:large {
-        font-size: 16px;
-        padding: 8px 22px;
-      }
+      <button type="button" class="btn btn-primary btn-lg">Large button</button>
       `,
     },
   },
@@ -337,13 +286,7 @@ Small.parameters = {
   docs: {
     source: {
       code: `
-      <button type="button" class="btn btn-secondary">Small Button</button>
-
-      // Your CSS styles for the small button component
-        .btn-secondary:small {
-        font-size: 13px;
-        padding: 4px 10px;
-      }
+      <button type="button" class="btn btn-primary btn-sm">Small button</button>
       `,
     },
   },
